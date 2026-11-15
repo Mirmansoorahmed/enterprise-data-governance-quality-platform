@@ -1,0 +1,38 @@
+# Ownership / RACI register (GOV-RACI-01).
+#
+# Every critical data element has a named Data Owner (accountable) and a named
+# Data Steward (Datenverantwortlicher, responsible). The DPO is consulted where
+# the element is personal data. The steward is NOT the GDPR Art. 4(7) controller
+# (Verantwortlicher); that legal role is the organisation (see
+# docs/RULES-AND-POLICIES.md s7). Names are fictional (synthetic lab).
+
+elements:
+  - element_id: customer.customer_id
+    domain: Customer
+    owner: Data Owner (Customer)
+    steward: Data Steward (Datenverantwortlicher, Customer)
+    dpo_consulted: false
+
+  - element_id: customer.email
+    domain: Customer
+    owner: Data Owner (Customer)
+    steward: Data Steward (Datenverantwortlicher, Customer)
+    dpo_consulted: true
+
+  - element_id: product.product_id
+    domain: Product
+    owner: Data Owner (Product)
+    steward: Data Steward (Datenverantwortlicher, Product)
+    dpo_consulted: false
+
+  - element_id: finance.cost_centre_id
+    domain: Finance
+    owner: Data Owner (Finance)
+    steward: Data Steward (Datenverantwortlicher, Finance)
+    dpo_consulted: false
+
+  - element_id: hr.employee_id
+    domain: HR
+    owner: Data Owner (HR)
+    steward: Data Steward (Datenverantwortlicher, HR)
+    dpo_consulted: true

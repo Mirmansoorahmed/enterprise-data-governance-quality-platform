@@ -1,0 +1,49 @@
+# OpenMetadata ingestion config (local demo only).
+#
+# Publishes the business glossary (EN + DE aliases), classification tags and
+# lineage to a locally running OpenMetadata (docker-compose, `make bootstrap`).
+# CI does NOT run this: CI validates the recorded fixture
+# governance/catalog/fixtures/catalog.json instead, so the pipeline stays light
+# and offline (requirements R4.1, design s10).
+#
+# This is a config template. The live ingestion wiring (server URL, JWT) is
+# supplied locally via env and is never committed.
+
+source:
+  type: metadata
+  serviceName: tarsfeld-dgqp
+  sourceConfig:
+    config:
+      type: DatabaseMetadata
+
+glossary:
+  name: Tarsfeld Data Governance Glossary
+  # Terms come from governance/glossary/glossary.yaml. Each term publishes its
+  # English name, German alias (synonym), definition, classification tag and a
+  # link to its ODCS contract and quality rule.
+  source: governance/glossary/glossary.yaml
+  languageAliases: [en, de]
+
+classification:
+  name: tarsfeld-classification
+  tags:
+    - pii.contact
+    - pii.hr
+    - confidential.finance
+    - master.customer
+    - master.product
+    - fit_for_ai
+    - not_fit_for_ai
+
+lineage:
+  # One KPI dataset per domain; descriptors in dbt/lineage.yaml.
+  source: dbt/lineage.yaml
+
+sink:
+  type: metadata-rest
+  config: {}
+
+workflowConfig:
+  # openMetadataServerConfig is supplied locally via env (DG_*-free; this is the
+  # oss local demo, not the hybrid profile). Never commit a token.
+  loggerLevel: INFO

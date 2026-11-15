@@ -1,0 +1,62 @@
+# Business glossary (GOV-META-01).
+#
+# Each critical element carries a business definition (English, with a German
+# alias where the Tarsfeld operating companies use one), a technical name, a
+# classification tag, and links to the data contract and quality rule that
+# apply. Definitions are in our own words; no statutory or standard text copied.
+
+terms:
+  - element_id: customer.customer_id
+    term_en: Customer identifier
+    term_de: Kundennummer
+    definition: Stable party key for a customer, unique across the country companies.
+    technical_name: customers.customer_id
+    contract_id: tarsfeld-customer
+    classification:
+      - master.customer
+    quality_rules:
+      - DQ-CUS-002
+
+  - element_id: customer.email
+    term_en: Customer contact email
+    term_de: Kontakt-E-Mail
+    definition: Email address used to reach a customer contact. Personal data.
+    technical_name: customers.email
+    contract_id: tarsfeld-customer
+    classification:
+      - pii.contact
+    quality_rules:
+      - DQ-CUS-001
+
+  - element_id: product.product_id
+    term_en: Product identifier
+    term_de: Produktnummer
+    definition: Master key for a product or material.
+    technical_name: products.product_id
+    contract_id: tarsfeld-product
+    classification:
+      - master.product
+    quality_rules:
+      - DQ-PRD-001
+
+  - element_id: finance.cost_centre_id
+    term_en: Cost centre identifier
+    term_de: Kostenstelle
+    definition: Reference to an active cost centre in the company-code reference list.
+    technical_name: finance_postings.cost_centre_id
+    contract_id: tarsfeld-finance
+    classification:
+      - confidential.finance
+    quality_rules:
+      - DQ-FIN-001
+
+  - element_id: hr.employee_id
+    term_en: Employee identifier
+    term_de: Personalnummer
+    definition: Master key for an employee record. Sensitive personal data; local-only.
+    technical_name: employees.employee_id
+    contract_id: tarsfeld-hr
+    classification:
+      - pii.hr
+    quality_rules:
+      - DQ-HR-001
