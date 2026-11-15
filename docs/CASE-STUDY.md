@@ -2,7 +2,7 @@
 
 **Portfolio case study** · prepared for Mir Mansoor Ahmed
 **Role in the fiction:** consultant at *Northwind Advisory*
-**Client in the fiction:** *Tarsfeld Group GmbH* — a diversified mid-to-large European group, about 6,000 employees, headquarters in Germany, operating companies in more than one country. Critical data sits in four domains: Customer, Product, Finance and HR. Not a real firm. Not Vaillant, not any other real employer, and not NordPay.
+**Client in the fiction:** *Tarsfeld Group GmbH* — a diversified mid-to-large European group, about 6,000 employees, headquarters in Germany, operating companies in more than one country. Critical data sits in four domains: Customer, Product, Finance and HR. Not a real firm and not any real employer.
 **Date:** 15 November 2026 (Europe/Berlin)
 **Status:** proposed engagement and lab design. This is not a completed client delivery, not legal advice, and not a conformity assessment. No results have been measured yet.
 
@@ -86,7 +86,7 @@ Three options were compared. The detailed Buy vs. Build table is in [`DESIGN.md`
 
 **C. Hybrid (recommended).** Keep the operating model — policies, RACI, stewardship workflow, quality rule pack, KPI scorecard, RoPA, classification and the AI label export — as our code, in Git, runnable fully open source. Buy or reuse commodity pieces behind adapters, with **Azure first where that is realistic**: Azure SQL Database and Azure Blob Storage as sources, Entra ID for group-to-owner mapping, optional Azure Monitor, and a Microsoft catalog sync **if** an account can actually be created. Recommend SAP MDG (or an equivalent hub) as a *buy* when MDM workflow is the client pain; do not clone it in the lab.
 
-**Decision: C.** It matches how a consultant would actually land this at a Microsoft-leaning European group, without making the demo or CI depend on Azure being available. The lab account is **Azure for Students**, **USD $90** credit, expiry **7 November 2027**, **IU tenant**. Only **Germany West Central** is allowed. Azure CLI device login is blocked; the portal works. A budget alert already exists. Purview Data Governance retirement, Fabric trial eligibility, Entra group claims, and free-offer policy on this subscription remain **TODOs** in `DESIGN.md` §15. Until a short, approved portal session says otherwise, the open-source profile is the one that must always run.
+**Decision: C.** It matches how a consultant would actually land this at a Microsoft-leaning European group, without making the demo or CI depend on Azure being available. The lab account is **a student Azure subscription with a budget alert**. Only **Germany West Central** is allowed. Azure CLI device login is blocked; the portal works. Purview Data Governance retirement, Fabric trial eligibility, Entra group claims, and free-offer policy on this subscription remain **TODOs** in `DESIGN.md` §15. Until a short, approved portal session says otherwise, the open-source profile is the one that must always run.
 
 ---
 

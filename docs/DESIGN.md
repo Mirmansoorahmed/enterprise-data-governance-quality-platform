@@ -3,11 +3,10 @@
 **Design note (v0.3, implementation brief)** · Portfolio project by Mir Mansoor Ahmed
 **Status:** design ready for spec · no implementation, no measured results
 **Fictional consultancy in examples:** *Northwind Advisory*
-**Fictional client:** *Tarsfeld Group GmbH* — a mid-to-large European group with operating companies in more than one country (not a real firm; not Vaillant, not any other real employer, and not the earlier “Rheinwerk Climate” heating story). Fictional figure, not copied from any real ad: about 6,000 employees, headquarters in Germany, customer, product, finance and HR data domains.
-**Why this client:** the trigger Vaillant ad was only an example. The 33-ad general sample of 14 November 2026 spans manufacturing, pharma, banking, telecom, retail, media, automotive and consulting. A Sales & Commercial / SAP-O2C story, or a fintech-only client (NordPay), would miss most of those jobs.
+**Fictional client:** *Tarsfeld Group GmbH* — a mid-to-large European group with operating companies in more than one country (not a real firm and not any real employer). Fictional figure, not copied from any real ad: about 6,000 employees, headquarters in Germany, customer, product, finance and HR data domains.
+**Why this client:** the original trigger was a single job ad, used only as an example. The 33-ad general sample of 14 November 2026 spans manufacturing, pharma, banking, telecom, retail, media, automotive and consulting. A Sales & Commercial / SAP-O2C story, or a fintech-only client, would miss most of those jobs.
 **Umbrella:** sits beside the AI Governance Platform. Data that may feed an assistant or agent must carry classification and ownership labels into **AI Compliance Automation** and the **Agent Access Governance Gateway**. This repo publishes labels; it does not decide allow / ask / deny.
 **Public name / repo (locked by Mir, 14 November 2026):** Enterprise Data Governance & Quality Platform · `enterprise-data-governance-quality-platform`
-**Working folder for the design pack:** `/workspace/portfolio/data-governance-automation/`
 **Date of this brief:** 15 November 2026 (Europe/Berlin), based on the v0.2 high-level design of 14 November 2026, plus verified Azure lab constraints and the Microsoft Purview Data Governance retirement announced 12 November 2026.
 
 This is a lab / portfolio design, not a production product, not legal advice, and not a conformity assessment. Nothing here is a claim that Tarsfeld Group, or any real firm, is compliant or audit-ready. Metrics below are **TARGETS** only. SAP MDG is not implemented. A live Microsoft catalog (Purview or Fabric) is optional, unverified, and may be impossible to create on the student subscription — see §15.
@@ -221,7 +220,7 @@ Do **not** put “SAP MDG”, “Collibra”, “Purview”, or “Microsoft Fab
 | Risk | Mitigation |
 |---|---|
 | Over-claiming SAP MDG, Collibra, Purview or Fabric hands-on | README, report and CV use the wording in §11. MDG and Collibra are buy recommendations. Microsoft catalog sync is optional and may be blocked by retirement or tenant policy. |
-| Student-account features missing, region-locked, or paid-only | Feature flags; `oss` is the supported default; portal check before any credit is spent; create-test-delete; budget alert already on the $90 credit (expires 7 November 2027). |
+| Student-account features missing, region-locked, or paid-only | Feature flags; `oss` is the supported default; portal check before any credit is spent; create-test-delete; budget alert already configured on the student subscription. |
 | Purview Data Governance retirement (12 Nov 2026) | Do not design the demo so it fails without a Purview account. Keep an adapter interface; prefer Azure SQL, Blob, Entra and optional Monitor as the live hybrid proof. |
 | Demo looks like a tool tour, not a specialist’s job | The 15-minute script is driven by the high-frequency job functions (quality, ownership, catalog, policies, privacy), not by product screens. |
 | Works-council or DPO concern if the story used real people | Synthetic data only; HR stays off Azure; RoPA is a template, not a compliance claim. |
@@ -258,7 +257,7 @@ Each phase must be demoable on its own once complete. Prefer small, testable sli
 
 ## 15. Azure student account and hybrid adapters
 
-**Verified in the Azure portal on 14–15 November 2026 (Europe/Berlin):** the lab subscription is **Azure for Students**, with **USD $90** credit, expiring **7 November 2027**, in the **IU tenant**. A **budget alert already exists**. Only **Germany West Central** is allowed; Sweden Central and West Europe were policy-blocked. **Azure CLI device-code login is blocked** by IU Conditional Access (error 53003, unregistered Linux device). The **portal works**. Resource creation for any hybrid demo is therefore **portal-only**, documented in `docs/HYBRID.md`. A previous ACA hybrid resource group on this subscription was deleted; measured cost was 0.
+**Verified in the Azure portal on 14–15 November 2026 (Europe/Berlin):** the lab account is **a student Azure subscription with a budget alert**. Only **Germany West Central** is allowed; Sweden Central and West Europe were policy-blocked. **Azure CLI device-code login is blocked** by Conditional Access (error 53003, unregistered Linux device). The **portal works**. Resource creation for any hybrid demo is therefore **portal-only**, documented in `docs/HYBRID.md`. A previous ACA hybrid resource group on this subscription was deleted; measured cost was 0.
 
 The `hybrid` profile may use this account. The `oss` profile remains the one CI guarantees, and `make demo` must still run with no Azure credentials. Tests use **mocked adapters**. Configuration is **environment variables only** (prefix `DG_`). Do not commit secrets. Do not publish the subscription ID in the README or the case-study PDF.
 
@@ -270,7 +269,7 @@ The `hybrid` profile may use this account. The `oss` profile remains the one CI 
 |---|---|---|---|
 | Azure SQL Database source | Free offer, General Purpose **serverless**, 100,000 vCore-seconds/month, 32 GB data + 32 GB backup, **Germany West Central**. Auto-pause after 15 minutes idle **and** auto-pause when the monthly free limit is hit. **Never** select “continue with charges”. The first free-tier database locks the region for later free databases, so it must be this region. | Realistic structured source for Finance or Customer, to exercise contract load and (for Finance) `DQ-FIN-001`. | Likely, if the student policy allows the free offer (portal TODO). |
 | Azure Blob Storage source | StorageV2, **Hot LRS**, smallest account, short-lived container, Germany West Central. | File landing zone for Product extracts (CSV/Parquet). Fallback if SQL is blocked. | Likely. |
-| Entra ID | Group-to-owner / steward / role mapping adapter. `oss` keeps local users or Keycloak. | Azure-first identity, same idea as the ACA hybrid profile. | Unverified: whether this student / IU tenant allows an app registration and group claims. Mock if not. |
+| Entra ID | Group-to-owner / steward / role mapping adapter. `oss` keeps local users or Keycloak. | Azure-first identity, same idea as the ACA hybrid profile. | Unverified: whether this student subscription allows an app registration and group claims. Mock if not. |
 | Azure Monitor / Log Analytics (optional) | Smallest workspace, shortest retention, Germany West Central. Typical first 5 GB/month analytics ingestion is free; do not leave the workspace running. | Optional hybrid evidence sink. | Optional. Skip if the SKU is not clearly free or tiny. |
 | Microsoft catalog sync | Interface that publishes the same glossary terms, assets and tags. Backends: mock (required), plus a live backend only if a usable account exists. | Azure-first catalog was the original plan; retirement changes what we can actually create. | **Unlikely.** See §15.2. |
 
@@ -282,7 +281,7 @@ Suggested env vars (names may be refined, but keep the `DG_` prefix and env-only
 
 On **12 November 2026** Microsoft announced that **Microsoft Purview Data Governance** is retiring, covering Unified Catalog, Data Map, Workflows, and classic Azure Purview. Microsoft Learn pages for Unified Catalog and related governance docs now state that **new accounts can no longer be created**, and that existing capabilities remain in maintenance mode through **12 November 2027**. Official transition narrative: *From Purview Data Governance to the Fabric OneLake Catalog* (Microsoft Community Hub, 13 November 2026). Fabric is the successor data-governance experience; governance there is included in Fabric capacity rather than a separate Purview meter. **Purview data security and compliance** (sensitivity labels, DLP, audit) continues and is a different product; it is usually licence-gated and is **not** assumed to be available on Azure for Students.
 
-Germany West Central is a Fabric region, and Microsoft documents a 60-day Fabric trial (F4 or F64) that must be cancelled to avoid leftover workspaces. Trial enablement, tenant limits, and whether an IU student user can start a trial are **unverified**. A paid Fabric F SKU must **not** be purchased against the $90 credit. Do **not** start a Fabric trial unless Mir explicitly says go after a cost and tenant-settings check, and only if the trial region can be Germany West Central and teardown happens the same day.
+Germany West Central is a Fabric region, and Microsoft documents a 60-day Fabric trial (F4 or F64) that must be cancelled to avoid leftover workspaces. Trial enablement, tenant limits, and whether a student user can start a trial are **unverified**. A paid Fabric F SKU must **not** be purchased against the student credit. Do **not** start a Fabric trial unless Mir explicitly says go after a cost and tenant-settings check, and only if the trial region can be Germany West Central and teardown happens the same day.
 
 If neither Purview nor Fabric can be created, the hybrid demo is still a success when Azure SQL and/or Blob (and optionally Entra / Monitor) run live, and the catalog adapter remains mocked. Say that plainly in the report.
 
@@ -290,7 +289,7 @@ If neither Purview nor Fabric can be created, the hybrid demo is still a success
 
 Must include:
 
-- Prerequisites: budget alert confirmed; region Germany West Central only; portal-only steps (no Azure CLI device login); IU Conditional Access note.
+- Prerequisites: budget alert confirmed; region Germany West Central only; portal-only steps (no Azure CLI device login); Conditional Access note.
 - Exactly which resources to create, SKU, region, name pattern, and estimated cost (free offer vs risk of overage).
 - Environment variables and how they are supplied (never committed).
 - Smoke tests: load one non-HR domain from Azure, run the quality gate, show whether catalog sync was live or mocked.
