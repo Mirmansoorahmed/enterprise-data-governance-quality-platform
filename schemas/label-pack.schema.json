@@ -30,7 +30,8 @@
               "type": "string",
               "enum": [
                 "pii.contact", "pii.hr", "confidential.finance",
-                "master.customer", "fit_for_ai", "not_fit_for_ai"
+                "master.customer", "master.product",
+                "fit_for_ai", "not_fit_for_ai"
               ]
             }
           },

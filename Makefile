@@ -7,7 +7,7 @@
 PYTHON ?= python3
 export PYTHONPATH := src
 
-.PHONY: help bootstrap pull validate test quality scorecard steward demo report clean
+.PHONY: help bootstrap pull validate test quality scorecard steward labels demo report clean
 
 help:
 	@echo "Targets:"
@@ -18,7 +18,8 @@ help:
 	@echo "  quality    run the data-quality gate over the synthetic extracts"
 	@echo "  scorecard  print the KPI scorecard (placeholders unless a run file exists)"
 	@echo "  steward    demo the steward issue/cleanse loop (fail -> issue -> cleanse -> re-run)"
-	@echo "  demo       run the demo script (Phase 8; placeholder until then)"
+	@echo "  labels     export the AI-FIT-01 label pack"
+	@echo "  demo       run the full demo script (oss, under 15 min after image pull)"
 	@echo "  report     build the PDF case-study pack (Phase 8; placeholder until then)"
 
 bootstrap:
@@ -46,6 +47,9 @@ scorecard:
 
 steward:
 	$(PYTHON) -m dgqp.workflow_cli
+
+labels:
+	$(PYTHON) -m dgqp.labels
 
 demo:
 	@echo "make demo is implemented in Phase 8 (demo script, under 15 min on oss)."

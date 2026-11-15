@@ -1,0 +1,100 @@
+{
+  "pack_version": "1.0.0",
+  "generated_at": "1970-01-01T00:00:00Z",
+  "labels": [
+    {
+      "asset_id": "tarsfeld-customer",
+      "field": "customer.customer_id",
+      "classification": [
+        "master.customer",
+        "not_fit_for_ai"
+      ],
+      "owner": "Data Owner (Customer)",
+      "steward": "Data Steward (Datenverantwortlicher, Customer)",
+      "fit_for_ai": false,
+      "policy_version": "1.0.0"
+    },
+    {
+      "asset_id": "tarsfeld-customer",
+      "field": "customer.email",
+      "classification": [
+        "pii.contact",
+        "not_fit_for_ai"
+      ],
+      "owner": "Data Owner (Customer)",
+      "steward": "Data Steward (Datenverantwortlicher, Customer)",
+      "fit_for_ai": false,
+      "policy_version": "1.0.0"
+    },
+    {
+      "asset_id": "tarsfeld-product",
+      "field": "product.product_id",
+      "classification": [
+        "master.product",
+        "not_fit_for_ai"
+      ],
+      "owner": "Data Owner (Product)",
+      "steward": "Data Steward (Datenverantwortlicher, Product)",
+      "fit_for_ai": false,
+      "policy_version": "1.0.0"
+    },
+    {
+      "asset_id": "tarsfeld-finance",
+      "field": "finance.cost_centre_id",
+      "classification": [
+        "confidential.finance",
+        "not_fit_for_ai"
+      ],
+      "owner": "Data Owner (Finance)",
+      "steward": "Data Steward (Datenverantwortlicher, Finance)",
+      "fit_for_ai": false,
+      "policy_version": "1.0.0"
+    },
+    {
+      "asset_id": "tarsfeld-hr",
+      "field": "hr.employee_id",
+      "classification": [
+        "pii.hr",
+        "not_fit_for_ai"
+      ],
+      "owner": "Data Owner (HR)",
+      "steward": "Data Steward (Datenverantwortlicher, HR)",
+      "fit_for_ai": false,
+      "policy_version": "1.0.0"
+    },
+    {
+      "asset_id": "marts.customer_kpi",
+      "field": "customer.kpi.reachability",
+      "classification": [
+        "fit_for_ai"
+      ],
+      "owner": "Data Owner (Customer)",
+      "steward": "Data Steward (Datenverantwortlicher, Customer)",
+      "fit_for_ai": true,
+      "policy_version": "1.0.0"
+    },
+    {
+      "asset_id": "marts.product_kpi",
+      "field": "product.kpi.completeness",
+      "classification": [
+        "fit_for_ai"
+      ],
+      "owner": "Data Owner (Product)",
+      "steward": "Data Steward (Datenverantwortlicher, Product)",
+      "fit_for_ai": true,
+      "policy_version": "1.0.0"
+    },
+    {
+      "asset_id": "marts.finance_kpi",
+      "field": "finance.kpi.valid_spend",
+      "classification": [
+        "confidential.finance",
+        "fit_for_ai"
+      ],
+      "owner": "Data Owner (Finance)",
+      "steward": "Data Steward (Datenverantwortlicher, Finance)",
+      "fit_for_ai": true,
+      "policy_version": "1.0.0"
+    }
+  ]
+}
