@@ -64,6 +64,11 @@ def test_yaml_flow_sequence_scalar():
     assert data == {"tags": ["pii.contact", "master.customer"]}
 
 
+def test_yaml_flow_sequence_keeps_commas_inside_parens():
+    data = yaml_min.load("roles: [Owner (A), Steward (B, C)]\n")
+    assert data == {"roles": ["Owner (A)", "Steward (B, C)"]}
+
+
 def test_yaml_rejects_tabs():
     with pytest.raises(yaml_min.YamlError):
         yaml_min.load("a:\n\tb: 1\n")

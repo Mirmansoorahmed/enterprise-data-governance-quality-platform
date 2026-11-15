@@ -1,0 +1,39 @@
+# Record of Processing Activities (POL-GDPR-04), GDPR Art. 30(1) field set.
+#
+# Electronic RoPA for the synthetic Customer and HR processing activities.
+# Illustrative lab artefact only: synthetic data, fictional controller, not a
+# compliance claim and not legal advice (see docs/RULES-AND-POLICIES.md).
+# Field names are our own labels for the Art. 30(1) categories; no statutory
+# text is copied.
+
+activities:
+  - activity_id: RoPA-CUS-01
+    controller: Tarsfeld Group GmbH (fictional)
+    dpo: DPO (Tarsfeld, fictional)
+    purposes:
+      - Maintain customer master and contact data for order and billing processes
+    categories_of_data_subjects:
+      - Customers and customer contacts
+    categories_of_personal_data:
+      - Contact email (pii.contact)
+      - Customer identifier and account attributes
+    categories_of_recipients:
+      - Internal Finance and Operations (need-to-know)
+    third_country_transfers: None in the synthetic lab
+    retention_time_limits: customer-standard (retention class; flag only, no production deletion)
+    security_measures: Classification tags, access policy by named role, quality gate
+
+  - activity_id: RoPA-HR-01
+    controller: Tarsfeld Group GmbH (fictional)
+    dpo: DPO (Tarsfeld, fictional)
+    purposes:
+      - Maintain the employee master for HR administration
+    categories_of_data_subjects:
+      - Employees (active and leavers)
+    categories_of_personal_data:
+      - Employee identifier and employment status/dates (pii.hr)
+    categories_of_recipients:
+      - Internal HR only (local; not exported, not uploaded to any cloud)
+    third_country_transfers: None; HR data is local-only
+    retention_time_limits: hr-sensitive (retention class; flag only, no production deletion)
+    security_measures: Local-only storage, pii.hr classification, restricted access, quality gate

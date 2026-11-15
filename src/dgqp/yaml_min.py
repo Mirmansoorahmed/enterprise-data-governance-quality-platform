@@ -239,6 +239,7 @@ def _split_flow(inner: str) -> list[str]:
     parts: list[str] = []
     buf = ""
     in_single = in_double = False
+    depth = 0
     for ch in inner:
         if ch == "'" and not in_double:
             in_single = not in_single
@@ -246,7 +247,13 @@ def _split_flow(inner: str) -> list[str]:
         elif ch == '"' and not in_single:
             in_double = not in_double
             buf += ch
-        elif ch == "," and not in_single and not in_double:
+        elif ch in "([" and not in_single and not in_double:
+            depth += 1
+            buf += ch
+        elif ch in ")]" and not in_single and not in_double:
+            depth = max(depth - 1, 0)
+            buf += ch
+        elif ch == "," and not in_single and not in_double and depth == 0:
             parts.append(buf)
             buf = ""
         else:

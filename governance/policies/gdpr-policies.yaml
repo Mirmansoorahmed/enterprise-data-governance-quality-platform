@@ -1,0 +1,75 @@
+# GDPR-mapped policies POL-GDPR-01..06 (POL-GDPR, docs/RULES-AND-POLICIES.md s4).
+#
+# Each policy maps to a check or workflow. Titles are our own short wording; no
+# statutory text is copied. Mappings are illustrative, not a conformity claim.
+# "article" holds the article id only (for traceability), not quoted text.
+
+policies:
+  - id: POL-GDPR-01
+    title: Data minimisation
+    article: "Art. 5(1)(c); Art. 25(2)"
+    check_type: minimisation
+    severity: critical
+    summary: Exports include only contract-declared necessary attributes.
+    on_fail: Block the export or data product; open a steward/DPO issue; no fit_for_ai.
+
+  - id: POL-GDPR-02
+    title: Accuracy, kept up to date
+    article: "Art. 5(1)(d)"
+    check_type: workflow
+    severity: high
+    summary: Personal data is subject to the quality gate; inaccuracies are rectified via the issue workflow.
+    on_fail: Fail the gate; open a rectification issue; quarantine until corrected or excepted.
+
+  - id: POL-GDPR-03
+    title: Storage limitation / retention
+    article: "Art. 5(1)(e); Art. 30(1)(f)"
+    check_type: retention
+    severity: high
+    summary: Each personal-data element carries a retention class; rows past the date are flagged (no production deletion).
+    on_fail: Flag the row past retention; block new exports; open a steward/DPO issue.
+
+  - id: POL-GDPR-04
+    title: Record of processing (RoPA)
+    article: "Art. 30(1); Art. 30(3)"
+    check_type: register
+    severity: high
+    summary: A RoPA entry exists for each personal-data processing activity with the Art. 30(1) field set.
+    on_fail: A processing activity without a RoPA entry cannot be approved for a new export or fit_for_ai; open a DPO issue.
+
+  - id: POL-GDPR-05
+    title: Protection by design and by default
+    article: "Art. 25(1); Art. 25(2)"
+    check_type: workflow
+    severity: high
+    summary: Contracts default to only the necessary attributes; classification is applied at contract-design time.
+    on_fail: Reject or revise the contract; do not publish the data product.
+
+  - id: POL-GDPR-06
+    title: Security of processing and access
+    article: "Art. 32(1); Art. 32(4)"
+    check_type: access
+    severity: critical
+    summary: Access to classified personal data is limited to named roles, for a documented purpose.
+    on_fail: Deny access; deny the export; open a security/DPO issue; no fit_for_ai.
+
+# Access policy: which roles may read which classification (POL-GDPR-06).
+# Role lists use block sequences (role names contain commas inside parentheses).
+access_policy:
+  - classification: pii.contact
+    allowed_roles:
+      - Data Owner (Customer)
+      - Data Steward (Datenverantwortlicher, Customer)
+      - DPO (Tarsfeld, fictional)
+    purpose_required: true
+  - classification: pii.hr
+    allowed_roles:
+      - Data Owner (HR)
+      - Data Steward (Datenverantwortlicher, HR)
+      - DPO (Tarsfeld, fictional)
+    purpose_required: true
+  - classification: confidential.finance
+    allowed_roles:
+      - Data Owner (Finance)
+      - Data Steward (Datenverantwortlicher, Finance)
+    purpose_required: true
