@@ -218,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# DGQP build artefacts (reproducible via `make report`).
+# The case-study PDF is generated; committed run files under eval/results/ are NOT ignored.
+report/case-study.pdf

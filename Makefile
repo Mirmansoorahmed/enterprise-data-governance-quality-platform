@@ -52,11 +52,10 @@ labels:
 	$(PYTHON) -m dgqp.labels
 
 demo:
-	@echo "make demo is implemented in Phase 8 (demo script, under 15 min on oss)."
-	@echo "Phases 0-3 deliver: validate, test, quality, scorecard."
+	$(PYTHON) -m dgqp.demo
 
 report:
-	@echo "make report is implemented in Phase 8 (PDF case-study pack, fail-closed)."
+	$(PYTHON) -m dgqp.report
 
 clean:
 	find . -type d -name __pycache__ -prune -exec rm -rf {} +
