@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/dgqp/label-pack.schema.json",
+  "title": "AI label pack (AI-FIT-01)",
+  "description": "Versioned classification/ownership labels this repo publishes for the sibling AI platform. This repo does not decide allow/ask/deny.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["pack_version", "generated_at", "labels"],
+  "properties": {
+    "pack_version": { "type": "string", "minLength": 1 },
+    "generated_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "asset_id", "field", "classification", "owner", "steward",
+          "fit_for_ai", "policy_version"
+        ],
+        "properties": {
+          "asset_id": { "type": "string", "minLength": 1 },
+          "field": { "type": "string", "minLength": 1 },
+          "classification": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "pii.contact", "pii.hr", "confidential.finance",
+                "master.customer", "fit_for_ai", "not_fit_for_ai"
+              ]
+            }
+          },
+          "owner": { "type": "string", "minLength": 1 },
+          "steward": { "type": "string", "minLength": 1 },
+          "fit_for_ai": { "type": "boolean" },
+          "policy_version": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}
