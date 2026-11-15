@@ -91,9 +91,12 @@ def finance_rows() -> list[dict]:
 def finance_control_totals() -> list[dict]:
     # Reported totals used for the consistency/reconciliation check. DE01 does
     # not reconcile with the sum of its postings on purpose.
+    # AT01 reconciles (F-3 150.00 + F-5 50.00 = 200.00). DE01 does not: its
+    # postings sum to 300.00 (F-1 + F-2) but the reported total is 350.00. Only
+    # DE01 is the seeded reconciliation defect (see data/DEFECTS.md).
     return [
         {"company": "DE01", "reported_total": "350.00"},
-        {"company": "AT01", "reported_total": "150.00"},
+        {"company": "AT01", "reported_total": "200.00"},
     ]
 
 

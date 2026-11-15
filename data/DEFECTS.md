@@ -12,7 +12,7 @@ steward cleanse. HR is local-only.
 | `DQ-CUS-003` | `raw/customer/customers.csv` | `C-DE-1004` | `vat_id` present but violates the DE contract pattern (`DE12AB`) |
 | `DQ-PRD-001` | `raw/product/products.csv` | `P-102`, `P-201` | missing `name`/`unit_of_measure`; missing `status` |
 | `DQ-FIN-001` | `raw/finance/finance_postings.csv` | `F-4`, `F-5` | cost centre not in reference; cost centre inactive |
-| `DQ-FIN-001` (consistency) | `raw/finance/finance_control_totals.csv` | `DE01` | reported total 350.00 ≠ sum of DE01 postings 300.00 (does not reconcile) |
+| `DQ-FIN-001` (consistency) | `raw/finance/finance_control_totals.csv` | `DE01` | reported total 350.00 ≠ sum of DE01 postings 375.00 (does not reconcile). AT01 reconciles (200.00 = 200.00) on purpose, so only DE01 is the seeded reconciliation defect. |
 | `DQ-HR-001` | `raw/hr/employees.csv` | `E-3`, `E-4`, `E-5` | stale `last_verified_on`; leaver with no `effective_to`; missing `status` |
 
 Allowed (not a defect): `C-AT-2003` has an empty `vat_id`, which the Customer
