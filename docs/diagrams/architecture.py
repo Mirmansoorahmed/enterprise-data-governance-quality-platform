@@ -325,7 +325,8 @@ def build(explained: bool = False):
     x, w = L4[0] + 18, L4[2] - 36
     items = [
         (9, False, "lucide/layout-dashboard.svg", "KPI scorecard",
-         ("Completeness, uniqueness,", "consistency. TARGETS until", "a committed run exists."), None),
+         ("Measured, run demo-2026-11-15T111652Z:", "completeness 0.762, uniqueness 0.875,",
+          "consistency 0.714, currentness 0.40,", "key match 0.857."), None),
         (10, False, "lucide/boxes.svg", "Data products",
          ("dbt marts for the four", "domains, served under", "the data contract."), None),
         (11, True, "lucide/shield-check.svg", "AI label export",
@@ -424,7 +425,7 @@ def build(explained: bool = False):
     text(
         56,
         928,
-        "Mir Mansoor Ahmed  ·  Enterprise Data Governance & Quality Platform  ·  Tarsfeld Group (fiction)  ·  14 November 2026  ·  RULES-AND-POLICIES.md",
+        "Mir Mansoor Ahmed  ·  Enterprise Data Governance & Quality Platform  ·  Tarsfeld Group (fiction)  ·  15 November 2026  ·  RULES-AND-POLICIES.md",
         13,
         500,
         NAVY2,
@@ -464,7 +465,7 @@ def build(explained: bool = False):
             (8, "Policies",
              "Written standards for access, retention and a short RoPA register. Source: GDPR Art. 5, Art. 30 and Art. 32."),
             (9, "KPI scorecard",
-             "Quality dimensions reported as TARGETS until a committed run exists. Process frame: ISO 8000-61; dimensions: ISO/IEC 25012."),
+             "Measured on the committed synthetic set (run demo-2026-11-15T111652Z): completeness 0.762, uniqueness 0.875, consistency 0.714, currentness 0.40, key match 0.857. Process frame: ISO 8000-61; dimensions: ISO/IEC 25012."),
             (10, "Data products",
              "Approved dbt marts for the four domains, served only under the data contract and after the quality gate."),
             (11, "AI label export",
@@ -509,7 +510,7 @@ def build(explained: bool = False):
         text(
             56,
             1540,
-            "Mir Mansoor Ahmed  ·  architecture-explained.png  ·  same figure as v3, with the legend below  ·  14 November 2026",
+            "Mir Mansoor Ahmed  ·  architecture-explained.png  ·  same figure as v3, with the legend below  ·  15 November 2026",
             13,
             500,
             NAVY2,

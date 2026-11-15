@@ -407,7 +407,7 @@ def build():
     kx, kw = 1566, 574
     ky = 190
     consumers = [
-        (False, "lucide/layout-dashboard.svg", "Quality KPI scorecard", "Completeness, uniqueness, consistency. TARGETS until a committed run exists.", "#EAF0F6", NAVY2),
+        (False, "lucide/layout-dashboard.svg", "Quality KPI scorecard", "Measured (run demo-2026-11-15T111652Z): completeness 0.762, uniqueness 0.875, consistency 0.714, currentness 0.40, key match 0.857.", "#EAF0F6", NAVY2),
         (False, "lucide/boxes.svg", "Domain data products  ·  dbt", "dbt marts for the four domains, served under the data contract.", "#EAF0F6", NAVY2),
         (False, "lucide/file-text.svg", "Evidence pack  ·  make report", "PDF case-study pack. Policies, RACI, RoPA, issue log. No invented numbers.", "#EAF0F6", NAVY2),
         (True, "lucide/tags.svg", "Label export", "{asset, field, classification, owner, steward, fit_for_ai, policy_version}", GREEN_L, GREEN),
@@ -578,13 +578,13 @@ def build():
     text(
         48,
         1400,
-        "This is a lab design, not a production product, not legal advice, and not a claim that any real firm is compliant. Metrics in the scorecard are TARGETS until a committed run exists.",
+        "This is a lab design, not a production product, not legal advice, and not a claim that any real firm is compliant. Scorecard metrics are measured on the committed run demo-2026-11-15T111652Z.",
         12,
         400,
         GREY,
         maxw=1700,
     )
-    text(W - 40, 1378, "Diagram v2  ·  14 November 2026  ·  Europe/Berlin", 12, 400, GREY2, "end")
+    text(W - 40, 1378, "Diagram v2  ·  15 November 2026  ·  Europe/Berlin", 12, 400, GREY2, "end")
     text(W - 40, 1400, "architecture.py  →  architecture.svg / .png", 12, 400, GREY2, "end")
     out.append("</svg>")
 

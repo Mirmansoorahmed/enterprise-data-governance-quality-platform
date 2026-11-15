@@ -192,9 +192,10 @@
   <rect width="7" height="5" x="3" y="16" rx="1"/>
 </svg>
 <text x="1486.0" y="220.0" font-size="17" font-weight="650" fill="#0F2A47" text-anchor="start">KPI scorecard</text>
-<text x="1446.0" y="258.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">Completeness, uniqueness,</text>
-<text x="1446.0" y="280.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">consistency. TARGETS until</text>
-<text x="1446.0" y="302.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">a committed run exists.</text>
+<text x="1446.0" y="258.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">Measured, run demo-2026-11-15T111652Z:</text>
+<text x="1446.0" y="280.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">completeness 0.762, uniqueness 0.875,</text>
+<text x="1446.0" y="302.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">consistency 0.714, currentness 0.40,</text>
+<text x="1446.0" y="324.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">key match 0.857.</text>
 <rect x="1426.0" y="358.0" width="420.0" height="160.0" rx="12" fill="#FFFFFF" stroke="#C9D3DD" stroke-width="1.4"/>
 <circle cx="1830.0" cy="374.0" r="10" fill="#0F2A47"/>
 <text x="1830.0" y="378.0" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">10</text>
@@ -289,7 +290,7 @@
 <text x="516.0" y="882.0" font-size="13" font-weight="400" fill="#1B2B3C" text-anchor="start">Human role</text>
 <rect x="656.0" y="870.0" width="22.0" height="14.0" rx="3" fill="#FBFCFD" stroke="#AEBBC8" stroke-width="1.3" stroke-dasharray="6 5"/>
 <text x="686.0" y="882.0" font-size="13" font-weight="400" fill="#1B2B3C" text-anchor="start">Optional buy</text>
-<text x="56.0" y="928.0" font-size="13" font-weight="500" fill="#1F3A5F" text-anchor="start">Mir Mansoor Ahmed  ·  Enterprise Data Governance &amp; Quality Platform  ·  Tarsfeld Group (fiction)  ·  14 November 2026  ·  RULES-AND-POLICIES.md</text>
+<text x="56.0" y="928.0" font-size="13" font-weight="500" fill="#1F3A5F" text-anchor="start">Mir Mansoor Ahmed  ·  Enterprise Data Governance &amp; Quality Platform  ·  Tarsfeld Group (fiction)  ·  15 November 2026  ·  RULES-AND-POLICIES.md</text>
 <text x="1864.0" y="928.0" font-size="13" font-weight="400" fill="#8A99A8" text-anchor="end">v3  ·  architecture.py</text>
 <rect x="56.0" y="960.0" width="1808.0" height="548.0" rx="14" fill="#F6F8FA" stroke="#D0D7DE" stroke-width="1.2"/>
 <text x="80.0" y="996.0" font-size="22" font-weight="650" fill="#0F2A47" text-anchor="start">How to read this figure</text>
@@ -331,7 +332,7 @@
 <circle cx="90.0" cy="1290.0" r="10" fill="#0F2A47"/>
 <text x="90.0" y="1294.0" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">9</text>
 <text x="108.0" y="1294.0" font-size="14" font-weight="650" fill="#0F2A47" text-anchor="start">KPI scorecard</text>
-<text x="108.0" y="1314.0" font-size="12" font-weight="400" fill="#1B2B3C" text-anchor="start">Quality dimensions reported as TARGETS until a committed run exists. Process frame: ISO 8000-61; dimensions: ISO/IEC 25012.</text>
+<text x="108.0" y="1314.0" font-size="12" font-weight="400" fill="#1B2B3C" text-anchor="start">Measured on the committed synthetic set (run demo-2026-11-15T111652Z): completeness 0.762, uniqueness 0.875, consistency 0.714, currentness 0.40, key match 0.857. Process frame: ISO 8000-61; dimensions: ISO/IEC 25012.</text>
 <circle cx="986.0" cy="1290.0" r="10" fill="#0F2A47"/>
 <text x="986.0" y="1294.0" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">10</text>
 <text x="1004.0" y="1294.0" font-size="14" font-weight="650" fill="#0F2A47" text-anchor="start">Data products</text>
@@ -354,6 +355,6 @@
 <text x="986.0" y="1410.0" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">14</text>
 <text x="1004.0" y="1410.0" font-size="14" font-weight="650" fill="#0F2A47" text-anchor="start">Request outcomes</text>
 <text x="1004.0" y="1430.0" font-size="12" font-weight="400" fill="#1B2B3C" text-anchor="start">A request can end in pass, a steward fix, or deny/ask. Nothing fails silently. Steward-fix is the path for a failed quality or policy check.</text>
-<text x="56.0" y="1540.0" font-size="13" font-weight="500" fill="#1F3A5F" text-anchor="start">Mir Mansoor Ahmed  ·  architecture-explained.png  ·  same figure as v3, with the legend below  ·  14 November 2026</text>
+<text x="56.0" y="1540.0" font-size="13" font-weight="500" fill="#1F3A5F" text-anchor="start">Mir Mansoor Ahmed  ·  architecture-explained.png  ·  same figure as v3, with the legend below  ·  15 November 2026</text>
 <text x="1864.0" y="1540.0" font-size="13" font-weight="400" fill="#8A99A8" text-anchor="end">v3  ·  architecture.py</text>
 </svg>

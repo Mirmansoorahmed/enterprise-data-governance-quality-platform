@@ -221,7 +221,7 @@
   <rect width="7" height="5" x="3" y="16" rx="1"/>
 </svg>
 <text x="1622.0" y="214.0" font-size="13" font-weight="650" fill="#0F2A47" text-anchor="start">Quality KPI scorecard</text>
-<text x="1622.0" y="234.0" font-size="11" font-weight="400" fill="#5B6B7C" text-anchor="start">Completeness, uniqueness, consistency. TARGETS until a committed run exists.</text>
+<text x="1622.0" y="234.0" font-size="11" font-weight="400" fill="#5B6B7C" text-anchor="start">Measured (run demo-2026-11-15T111652Z): completeness 0.762, uniqueness 0.875, consistency 0.714, currentness 0.40, key match 0.857.</text>
 <rect x="1566.0" y="282.0" width="574.0" height="80.0" rx="8" fill="#FFFFFF" stroke="#DCE3EA" stroke-width="1.2"/>
 <circle cx="1598" cy="310" r="16" fill="#EAF0F6"/>
 <svg viewBox="0 0 24 24" fill="none" stroke="#1F3A5F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="1588.8" y="300.8" width="18.4" height="18.4">
@@ -452,7 +452,7 @@
 <text x="1566.0" y="1310.0" font-size="11" font-weight="400" fill="#5B6B7C" text-anchor="start">Collibra and Purview — no unofficial vendor marks.</text>
 <line x1="48" y1="1352" x2="2160" y2="1352" stroke="#E4E9EE"/>
 <text x="48.0" y="1378.0" font-size="13" font-weight="500" fill="#1F3A5F" text-anchor="start">Mir Mansoor Ahmed  ·  Portfolio Lab  ·  fictional client: Tarsfeld Group GmbH  ·  consultancy in examples: Northwind Advisory</text>
-<text x="48.0" y="1400.0" font-size="12" font-weight="400" fill="#5B6B7C" text-anchor="start">This is a lab design, not a production product, not legal advice, and not a claim that any real firm is compliant. Metrics in the scorecard are TARGETS until a committed run exists.</text>
-<text x="2160.0" y="1378.0" font-size="12" font-weight="400" fill="#8A99A8" text-anchor="end">Diagram v2  ·  14 November 2026  ·  Europe/Berlin</text>
+<text x="48.0" y="1400.0" font-size="12" font-weight="400" fill="#5B6B7C" text-anchor="start">This is a lab design, not a production product, not legal advice, and not a claim that any real firm is compliant. Scorecard metrics are measured on the committed run demo-2026-11-15T111652Z.</text>
+<text x="2160.0" y="1378.0" font-size="12" font-weight="400" fill="#8A99A8" text-anchor="end">Diagram v2  ·  15 November 2026  ·  Europe/Berlin</text>
 <text x="2160.0" y="1400.0" font-size="12" font-weight="400" fill="#8A99A8" text-anchor="end">architecture.py  →  architecture.svg / .png</text>
 </svg>
