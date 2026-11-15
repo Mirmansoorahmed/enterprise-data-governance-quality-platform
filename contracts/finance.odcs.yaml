@@ -1,0 +1,50 @@
+apiVersion: v3.2.0
+kind: DataContract
+id: tarsfeld-finance
+name: Tarsfeld Finance Data Product
+version: 1.0.0
+domain: Finance
+description: Synthetic finance postings referencing the cost-centre reference list.
+schema:
+  - name: finance_postings
+    physicalName: finance_postings.csv
+    properties:
+      - name: posting_id
+        logicalType: string
+        required: true
+        unique: true
+      - name: company
+        logicalType: string
+        required: true
+      - name: cost_centre_id
+        logicalType: string
+        required: true
+        classification: confidential.finance
+        description: Must exist and be active in the company-code reference (DQ-FIN-001).
+      - name: amount
+        logicalType: number
+        required: true
+        classification: confidential.finance
+  - name: finance_control_totals
+    physicalName: finance_control_totals.csv
+    properties:
+      - name: company
+        logicalType: string
+        required: true
+      - name: reported_total
+        logicalType: number
+        required: true
+        description: Must reconcile with the sum of that company's postings (DQ-FIN-001 consistency).
+customProperties:
+  mediaType: application/odcs+yaml;version=3.2.0
+  owner: Data Owner (Finance)
+  steward: Data Steward (Datenverantwortlicher, Finance)
+  classification:
+    - confidential.finance
+  policyIds: []
+  qualityRuleIds:
+    - DQ-FIN-001
+  retentionClass: finance-standard
+  localOnly: false
+  references:
+    - tarsfeld-finance-costcentres

@@ -1,0 +1,42 @@
+apiVersion: v3.2.0
+kind: DataContract
+id: tarsfeld-product
+name: Tarsfeld Product Data Product
+version: 1.0.0
+domain: Product
+description: Synthetic product/material master and hierarchy across two country companies.
+schema:
+  - name: products
+    physicalName: products.csv
+    properties:
+      - name: product_id
+        logicalType: string
+        required: true
+        unique: true
+        description: Product master key.
+      - name: company
+        logicalType: string
+        required: true
+      - name: name
+        logicalType: string
+        required: true
+        description: Mandatory per DQ-PRD-001.
+      - name: status
+        logicalType: string
+        required: true
+        description: Mandatory per DQ-PRD-001.
+      - name: unit_of_measure
+        logicalType: string
+        required: true
+        description: Mandatory per DQ-PRD-001.
+customProperties:
+  mediaType: application/odcs+yaml;version=3.2.0
+  owner: Data Owner (Product)
+  steward: Data Steward (Datenverantwortlicher, Product)
+  classification:
+    - master.product
+  policyIds: []
+  qualityRuleIds:
+    - DQ-PRD-001
+  retentionClass: product-standard
+  localOnly: false

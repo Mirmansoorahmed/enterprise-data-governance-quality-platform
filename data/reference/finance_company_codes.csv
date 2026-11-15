@@ -1,0 +1,5 @@
+cost_centre_id,company,active
+CC-1000,DE01,true
+CC-1001,DE01,true
+CC-2000,AT01,true
+CC-2001,AT01,false

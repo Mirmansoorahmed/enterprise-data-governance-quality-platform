@@ -1,0 +1,59 @@
+apiVersion: v3.2.0
+kind: DataContract
+id: tarsfeld-customer
+name: Tarsfeld Customer Data Product
+version: 1.0.0
+domain: Customer
+description: Synthetic customer party/contact/account master across two country companies.
+schema:
+  - name: customers
+    physicalName: customers.csv
+    properties:
+      - name: customer_id
+        logicalType: string
+        required: true
+        unique: true
+        classification: master.customer
+        description: Party key. Unique across the two country companies.
+      - name: company
+        logicalType: string
+        required: true
+        description: Country company code (DE01 or AT01).
+      - name: name
+        logicalType: string
+        required: true
+      - name: email
+        logicalType: string
+        required: true
+        classification: pii.contact
+        pattern: "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+        description: Contact email. Contract formal syntax, not a specific RFC.
+      - name: vat_id
+        logicalType: string
+        required: false
+        description: VAT identification number, optional. Pattern per country below.
+customProperties:
+  mediaType: application/odcs+yaml;version=3.2.0
+  owner: Data Owner (Customer)
+  steward: Data Steward (Datenverantwortlicher, Customer)
+  classification:
+    - master.customer
+    - pii.contact
+  policyIds:
+    - POL-GDPR-01
+    - POL-GDPR-02
+    - POL-GDPR-05
+    - POL-GDPR-06
+  qualityRuleIds:
+    - DQ-CUS-001
+    - DQ-CUS-002
+    - DQ-CUS-003
+  retentionClass: customer-standard
+  localOnly: false
+  vatPatterns:
+    DE: "^DE[0-9]{9}$"
+    AT: "^ATU[0-9]{8}$"
+  vatPatternNote: >
+    Lab contract parameters for the synthetic set only. These are NOT official
+    VAT formats; no national digit pattern was verified from the official EU VAT
+    pages (see docs/RULES-AND-POLICIES.md DQ-CUS-003).
