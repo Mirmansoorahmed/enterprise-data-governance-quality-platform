@@ -1,0 +1,266 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="960" viewBox="0 0 1920 960" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+<rect width="1920" height="960" fill="#FFFFFF"/>
+<text x="56.0" y="50.0" font-size="32" font-weight="650" fill="#0F2A47" text-anchor="start">Enterprise Data Governance &amp; Quality Platform</text>
+<text x="56.0" y="82.0" font-size="16" font-weight="400" fill="#5B6B7C" text-anchor="start">Four lanes, left to right  ·  Open-source default  ·  Labels export to the AI Governance Platform</text>
+<rect x="1621.8" y="34.0" width="242.2" height="32.0" rx="16" fill="#F1F6FB" stroke="#D6E2EE" stroke-width="1"/>
+<svg viewBox="0 0 24 24" fill="#2496ED" x="1633.8" y="40.0" width="20" height="20"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg>
+<text x="1848.0" y="56.0" font-size="13" font-weight="500" fill="#1F3A5F" text-anchor="end">oss profile  ·  Docker Compose</text>
+<line x1="56" y1="104" x2="1864" y2="104" stroke="#E6EBF0" stroke-width="1"/>
+<rect x="56.0" y="126.0" width="300.0" height="596.0" rx="14" fill="#F6F8FA" stroke="#1F3A5F" stroke-width="1.4" stroke-dasharray="7 6"/>
+<text x="78.0" y="160.0" font-size="13" font-weight="700" fill="#1F3A5F" text-anchor="start" letter-spacing="1.0">1  ·  DATA SOURCES</text>
+<rect x="400.0" y="126.0" width="300.0" height="596.0" rx="14" fill="#F5FBFA" stroke="#0B8A8A" stroke-width="1.4" stroke-dasharray="7 6"/>
+<text x="422.0" y="160.0" font-size="13" font-weight="700" fill="#0B8A8A" text-anchor="start" letter-spacing="1.0">2  ·  CONTRACTS &amp; QUALITY GATE</text>
+<rect x="744.0" y="126.0" width="620.0" height="596.0" rx="14" fill="#F5FBFA" stroke="#0B8A8A" stroke-width="1.4" stroke-dasharray="7 6"/>
+<text x="766.0" y="160.0" font-size="13" font-weight="700" fill="#0B8A8A" text-anchor="start" letter-spacing="1.0">3  ·  GOVERNANCE CORE</text>
+<rect x="1408.0" y="126.0" width="456.0" height="596.0" rx="14" fill="#F5FAF7" stroke="#047857" stroke-width="1.4" stroke-dasharray="7 6"/>
+<text x="1430.0" y="160.0" font-size="13" font-weight="700" fill="#047857" text-anchor="start" letter-spacing="1.0">4  ·  CONSUMERS</text>
+<path d="M361.0,440.0 L387.5,440.0" fill="none" stroke="#0B8A8A" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M395.0,440.0 L381.4,433.0 L383.6,440.0 L381.4,447.0 Z" fill="#0B8A8A"/>
+<path d="M705.0,440.0 L731.5,440.0" fill="none" stroke="#0B8A8A" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M739.0,440.0 L725.4,433.0 L727.6,440.0 L725.4,447.0 Z" fill="#0B8A8A"/>
+<path d="M1369.0,440.0 L1395.5,440.0" fill="none" stroke="#047857" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M1403.0,440.0 L1389.4,433.0 L1391.6,440.0 L1389.4,447.0 Z" fill="#047857"/>
+<rect x="74.0" y="182.0" width="264.0" height="516.0" rx="12" fill="#FFFFFF" stroke="#C9D3DD" stroke-width="1.3"/>
+<circle cx="104" cy="216" r="20" fill="#EAF0F6"/>
+<svg viewBox="0 0 24 24" fill="none" stroke="#1F3A5F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="92.5" y="204.5" width="23.0" height="23.0">
+  <ellipse cx="12" cy="5" rx="9" ry="3"/>
+  <path d="M3 5V19A9 3 0 0 0 21 19V5"/>
+  <path d="M3 12A9 3 0 0 0 21 12"/>
+</svg>
+<text x="132.0" y="210.0" font-size="17" font-weight="650" fill="#0F2A47" text-anchor="start">Four domains</text>
+<text x="132.0" y="234.0" font-size="13" font-weight="400" fill="#5B6B7C" text-anchor="start">Synthetic data only</text>
+<line x1="92" y1="258" x2="320" y2="258" stroke="#E6EBF0"/>
+<svg viewBox="0 0 24 24" fill="none" stroke="#1F3A5F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="96.0" y="286.0" width="26" height="26">
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+  <path d="M16 3.128a4 4 0 0 1 0 7.744"/>
+  <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+  <circle cx="9" cy="7" r="4"/>
+</svg>
+<text x="132.0" y="296.0" font-size="16" font-weight="650" fill="#0F2A47" text-anchor="start">Customer</text>
+<text x="132.0" y="320.0" font-size="13" font-weight="400" fill="#5B6B7C" text-anchor="start">CRM  ·  party and contacts</text>
+<svg viewBox="0 0 24 24" fill="none" stroke="#1F3A5F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="96.0" y="374.0" width="26" height="26">
+  <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/>
+  <path d="M12 22V12"/>
+  <polyline points="3.29 7 12 12 20.71 7"/>
+  <path d="m7.5 4.27 9 5.15"/>
+</svg>
+<text x="132.0" y="384.0" font-size="16" font-weight="650" fill="#0F2A47" text-anchor="start">Product</text>
+<text x="132.0" y="408.0" font-size="13" font-weight="400" fill="#5B6B7C" text-anchor="start">Product and material master</text>
+<svg viewBox="0 0 24 24" fill="none" stroke="#1F3A5F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="96.0" y="462.0" width="26" height="26">
+  <path d="M10 18v-7"/>
+  <path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/>
+  <path d="M14 18v-7"/>
+  <path d="M18 18v-7"/>
+  <path d="M3 22h18"/>
+  <path d="M6 18v-7"/>
+</svg>
+<text x="132.0" y="472.0" font-size="16" font-weight="650" fill="#0F2A47" text-anchor="start">Finance</text>
+<text x="132.0" y="496.0" font-size="13" font-weight="400" fill="#5B6B7C" text-anchor="start">Vendor, invoice, cost centre</text>
+<svg viewBox="0 0 24 24" fill="none" stroke="#1F3A5F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="96.0" y="550.0" width="26" height="26">
+  <path d="M13 19a4 4 0 00-8 0"/>
+  <path d="M16 10h2"/>
+  <path d="M16 14h2"/>
+  <circle cx="9" cy="12" r="3"/>
+  <rect x="2" y="5" width="20" height="14" rx="2"/>
+</svg>
+<text x="132.0" y="560.0" font-size="16" font-weight="650" fill="#0F2A47" text-anchor="start">HR</text>
+<text x="132.0" y="584.0" font-size="13" font-weight="400" fill="#5B6B7C" text-anchor="start">Employee master  ·  PII</text>
+<text x="94.0" y="674.0" font-size="13" font-weight="400" fill="#8A99A8" text-anchor="start">No real customer or employee data.</text>
+<rect x="418.0" y="182.0" width="264.0" height="220.0" rx="12" fill="#FFFFFF" stroke="#9FCFCB" stroke-width="1.4"/>
+<circle cx="448" cy="216" r="20" fill="#E7F4F3"/>
+<svg viewBox="0 0 24 24" fill="none" stroke="#0B8A8A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="436.5" y="204.5" width="23.0" height="23.0">
+  <path d="M15 8a1 1 0 0 1-1-1V2a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8z"/>
+  <path d="M20 8v12a2 2 0 0 1-2 2h-4.182"/>
+  <path d="m3.305 19.53.923-.382"/>
+  <path d="M4 10.592V4a2 2 0 0 1 2-2h8"/>
+  <path d="m4.228 16.852-.924-.383"/>
+  <path d="m5.852 15.228-.383-.923"/>
+  <path d="m5.852 20.772-.383.924"/>
+  <path d="m8.148 15.228.383-.923"/>
+  <path d="m8.53 21.696-.382-.924"/>
+  <path d="m9.773 16.852.922-.383"/>
+  <path d="m9.773 19.148.922.383"/>
+  <circle cx="7" cy="18" r="3"/>
+</svg>
+<text x="476.0" y="210.0" font-size="17" font-weight="650" fill="#0F2A47" text-anchor="start">Data contracts</text>
+<text x="476.0" y="234.0" font-size="13" font-weight="400" fill="#5B6B7C" text-anchor="start">Versioned YAML / ODCS</text>
+<text x="440.0" y="274.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">Declares the critical data</text>
+<text x="440.0" y="300.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">elements in each domain, and</text>
+<text x="440.0" y="326.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">the rule that must hold before</text>
+<text x="440.0" y="352.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">data can move on.</text>
+<path d="M550.0,406.0 L550.0,419.3" fill="none" stroke="#0B8A8A" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M550.0,426.0 L543.5,413.8 L550.0,416.0 L556.5,413.8 Z" fill="#0B8A8A"/>
+<rect x="418.0" y="430.0" width="264.0" height="220.0" rx="12" fill="#FFFFFF" stroke="#9FCFCB" stroke-width="1.4"/>
+<circle cx="448" cy="464" r="20" fill="#E7F4F3"/>
+<svg viewBox="0 0 24 24" fill="none" stroke="#0B8A8A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="436.5" y="452.5" width="23.0" height="23.0">
+  <path d="M13 5h8"/>
+  <path d="M13 12h8"/>
+  <path d="M13 19h8"/>
+  <path d="m3 17 2 2 4-4"/>
+  <path d="m3 7 2 2 4-4"/>
+</svg>
+<text x="476.0" y="458.0" font-size="17" font-weight="650" fill="#0F2A47" text-anchor="start">Quality gate</text>
+<text x="476.0" y="482.0" font-size="13" font-weight="400" fill="#5B6B7C" text-anchor="start">Great Expectations  ·  dbt</text>
+<text x="440.0" y="518.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">Completeness, uniqueness</text>
+<text x="440.0" y="542.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">and consistency. A fail opens</text>
+<text x="440.0" y="566.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">a steward issue — it is never</text>
+<text x="440.0" y="590.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">a silent skip.</text>
+<rect x="436.0" y="620.0" width="139.0" height="18.0" rx="9" fill="#F3F6F8" stroke="#C5D0DA" stroke-width="1"/>
+<text x="505.5" y="633.2" font-size="10" font-weight="600" fill="#5B6B7C" text-anchor="middle">ISO 8000 / ISO/IEC 25012</text>
+<rect x="762.0" y="182.0" width="584.0" height="124.0" rx="12" fill="#FFFFFF" stroke="#9FCFCB" stroke-width="1.4"/>
+<circle cx="792" cy="218" r="20" fill="#E7F4F3"/>
+<svg viewBox="0 0 24 24" fill="none" stroke="#0B8A8A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="780.5" y="206.5" width="23.0" height="23.0">
+  <path d="m16 6 4 14"/>
+  <path d="M12 6v14"/>
+  <path d="M8 8v12"/>
+  <path d="M4 4v16"/>
+</svg>
+<text x="822.0" y="214.0" font-size="17" font-weight="650" fill="#0F2A47" text-anchor="start">Catalog &amp; glossary</text>
+<text x="822.0" y="238.0" font-size="13" font-weight="400" fill="#5B6B7C" text-anchor="start">OpenMetadata  ·  default</text>
+<text x="784.0" y="278.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">Definitions for the critical elements, in English with German aliases.</text>
+<rect x="762.0" y="324.0" width="283.0" height="168.0" rx="12" fill="#FFFFFF" stroke="#9FCFCB" stroke-width="1.4"/>
+<circle cx="790.0" cy="356" r="18" fill="#E7F4F3"/>
+<svg viewBox="0 0 24 24" fill="none" stroke="#0B8A8A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="779.6" y="345.6" width="20.7" height="20.7">
+  <line x1="6" x2="6" y1="3" y2="15"/>
+  <circle cx="18" cy="6" r="3"/>
+  <circle cx="6" cy="18" r="3"/>
+  <path d="M18 9a9 9 0 0 1-9 9"/>
+</svg>
+<text x="816.0" y="362.0" font-size="16" font-weight="650" fill="#0F2A47" text-anchor="start">Lineage</text>
+<text x="782.0" y="402.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">Source → mart → KPI,</text>
+<text x="782.0" y="426.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">so a number can be traced.</text>
+<rect x="1063.0" y="324.0" width="283.0" height="168.0" rx="12" fill="#FFFFFF" stroke="#9FCFCB" stroke-width="1.4"/>
+<circle cx="1091.0" cy="356" r="18" fill="#E7F4F3"/>
+<svg viewBox="0 0 24 24" fill="none" stroke="#0B8A8A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="1080.7" y="345.6" width="20.7" height="20.7">
+  <path d="M13.172 2a2 2 0 0 1 1.414.586l6.71 6.71a2.4 2.4 0 0 1 0 3.408l-4.592 4.592a2.4 2.4 0 0 1-3.408 0l-6.71-6.71A2 2 0 0 1 6 9.172V3a1 1 0 0 1 1-1z"/>
+  <path d="M2 7v6.172a2 2 0 0 0 .586 1.414l6.71 6.71a2.4 2.4 0 0 0 3.191.193"/>
+  <circle cx="10.5" cy="6.5" r=".5" fill="currentColor"/>
+</svg>
+<text x="1117.0" y="362.0" font-size="16" font-weight="650" fill="#0F2A47" text-anchor="start">Classification</text>
+<text x="1083.0" y="402.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">PII, confidential, and</text>
+<text x="1083.0" y="426.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">fit_for_ai / not_fit_for_ai.</text>
+<rect x="1079.0" y="464.0" width="105.9" height="18.0" rx="9" fill="#F3F6F8" stroke="#C5D0DA" stroke-width="1"/>
+<text x="1132.0" y="477.2" font-size="10" font-weight="600" fill="#5B6B7C" text-anchor="middle">GDPR Art. 5/30/32</text>
+<rect x="762.0" y="510.0" width="283.0" height="168.0" rx="12" fill="#FFFFFF" stroke="#9FCFCB" stroke-width="1.4"/>
+<circle cx="790.0" cy="542" r="18" fill="#E7F4F3"/>
+<svg viewBox="0 0 24 24" fill="none" stroke="#0B8A8A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="779.6" y="531.6" width="20.7" height="20.7">
+  <path d="m16 11 2 2 4-4"/>
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+  <circle cx="9" cy="7" r="4"/>
+</svg>
+<text x="816.0" y="548.0" font-size="16" font-weight="650" fill="#0F2A47" text-anchor="start">Ownership / RACI</text>
+<text x="782.0" y="588.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">A named Data Owner and a</text>
+<text x="782.0" y="612.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">Data Steward per element.</text>
+<rect x="1063.0" y="510.0" width="283.0" height="168.0" rx="12" fill="#FFFFFF" stroke="#9FCFCB" stroke-width="1.4"/>
+<circle cx="1091.0" cy="542" r="18" fill="#E7F4F3"/>
+<svg viewBox="0 0 24 24" fill="none" stroke="#0B8A8A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="1080.7" y="531.6" width="20.7" height="20.7">
+  <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>
+  <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+  <path d="M10 9H8"/>
+  <path d="M16 13H8"/>
+  <path d="M16 17H8"/>
+</svg>
+<text x="1117.0" y="548.0" font-size="16" font-weight="650" fill="#0F2A47" text-anchor="start">Policies</text>
+<text x="1083.0" y="588.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">Standards, access, retention,</text>
+<text x="1083.0" y="612.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">and a short RoPA register.</text>
+<rect x="1079.0" y="650.0" width="105.9" height="18.0" rx="9" fill="#F3F6F8" stroke="#C5D0DA" stroke-width="1"/>
+<text x="1132.0" y="663.2" font-size="10" font-weight="600" fill="#5B6B7C" text-anchor="middle">GDPR Art. 5/30/32</text>
+<rect x="1426.0" y="182.0" width="420.0" height="160.0" rx="12" fill="#FFFFFF" stroke="#C9D3DD" stroke-width="1.4"/>
+<circle cx="1458" cy="214" r="18" fill="#EAF0F6"/>
+<svg viewBox="0 0 24 24" fill="none" stroke="#1F3A5F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="1447.7" y="203.7" width="20.7" height="20.7">
+  <rect width="7" height="9" x="3" y="3" rx="1"/>
+  <rect width="7" height="5" x="14" y="3" rx="1"/>
+  <rect width="7" height="9" x="14" y="12" rx="1"/>
+  <rect width="7" height="5" x="3" y="16" rx="1"/>
+</svg>
+<text x="1486.0" y="220.0" font-size="17" font-weight="650" fill="#0F2A47" text-anchor="start">KPI scorecard</text>
+<text x="1446.0" y="258.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">Completeness, uniqueness,</text>
+<text x="1446.0" y="280.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">consistency. TARGETS until</text>
+<text x="1446.0" y="302.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">a committed run exists.</text>
+<rect x="1426.0" y="358.0" width="420.0" height="160.0" rx="12" fill="#FFFFFF" stroke="#C9D3DD" stroke-width="1.4"/>
+<circle cx="1458" cy="390" r="18" fill="#EAF0F6"/>
+<svg viewBox="0 0 24 24" fill="none" stroke="#1F3A5F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="1447.7" y="379.6" width="20.7" height="20.7">
+  <path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/>
+  <path d="m7 16.5-4.74-2.85"/>
+  <path d="m7 16.5 5-3"/>
+  <path d="M7 16.5v5.17"/>
+  <path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/>
+  <path d="m17 16.5-5-3"/>
+  <path d="m17 16.5 4.74-2.85"/>
+  <path d="M17 16.5v5.17"/>
+  <path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/>
+  <path d="M12 8 7.26 5.15"/>
+  <path d="m12 8 4.74-2.85"/>
+  <path d="M12 13.5V8"/>
+</svg>
+<text x="1486.0" y="396.0" font-size="17" font-weight="650" fill="#0F2A47" text-anchor="start">Data products</text>
+<text x="1446.0" y="434.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">dbt marts for the four</text>
+<text x="1446.0" y="456.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">domains, served under</text>
+<text x="1446.0" y="478.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">the data contract.</text>
+<rect x="1426.0" y="534.0" width="420.0" height="160.0" rx="12" fill="#FFFFFF" stroke="#86D0B0" stroke-width="1.4"/>
+<rect x="1426.0" y="534.0" width="7.0" height="160.0" rx="3" fill="#047857" stroke="none" stroke-width="1"/>
+<circle cx="1458" cy="566" r="18" fill="#E7F6EE"/>
+<svg viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="1447.7" y="555.6" width="20.7" height="20.7">
+  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+  <path d="m9 12 2 2 4-4"/>
+</svg>
+<text x="1486.0" y="572.0" font-size="17" font-weight="650" fill="#047857" text-anchor="start">AI label export</text>
+<text x="1446.0" y="610.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">Owner, classification and</text>
+<text x="1446.0" y="632.0" font-size="14" font-weight="400" fill="#1B2B3C" text-anchor="start">fit_for_ai go to the AI platform.</text>
+<rect x="1442.0" y="666.0" width="94.8" height="18.0" rx="9" fill="#F3F6F8" stroke="#C5D0DA" stroke-width="1"/>
+<text x="1489.4" y="679.2" font-size="10" font-weight="600" fill="#5B6B7C" text-anchor="middle">EU AI Act Art. 10</text>
+<rect x="56.0" y="742.0" width="644.0" height="86.0" rx="12" fill="#FBF1E1" stroke="#E8C989" stroke-width="1.3"/>
+<text x="76.0" y="764.0" font-size="11" font-weight="700" fill="#A86A12" text-anchor="start" letter-spacing="0.8">PEOPLE IN THE LOOP</text>
+<svg viewBox="0 0 24 24" fill="none" stroke="#A86A12" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="72.0" y="782.0" width="22" height="22">
+  <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+  <rect width="20" height="14" x="2" y="6" rx="2"/>
+</svg>
+<text x="100.0" y="802.0" font-size="15" font-weight="600" fill="#A86A12" text-anchor="start">Data Owner</text>
+<svg viewBox="0 0 24 24" fill="none" stroke="#A86A12" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="213.3" y="782.0" width="22" height="22">
+  <path d="m16 11 2 2 4-4"/>
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+  <circle cx="9" cy="7" r="4"/>
+</svg>
+<text x="241.3" y="794.0" font-size="15" font-weight="600" fill="#A86A12" text-anchor="start">Data Steward</text>
+<text x="241.3" y="812.0" font-size="11" font-weight="500" fill="#A86A12" text-anchor="start">(Datenverantwortlicher)</text>
+<svg viewBox="0 0 24 24" fill="none" stroke="#A86A12" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="394.7" y="782.0" width="22" height="22">
+  <path d="M12 3v18"/>
+  <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/>
+  <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/>
+  <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/>
+  <path d="M7 21h10"/>
+</svg>
+<text x="422.7" y="802.0" font-size="15" font-weight="600" fill="#A86A12" text-anchor="start">DPO</text>
+<rect x="744.0" y="742.0" width="620.0" height="86.0" rx="12" fill="#FBFCFD" stroke="#AEBBC8" stroke-width="1.3" stroke-dasharray="6 5"/>
+<text x="764.0" y="766.0" font-size="11" font-weight="700" fill="#5B6B7C" text-anchor="start" letter-spacing="0.8">OPTIONAL BUY  ·  NOT BUILT</text>
+<svg viewBox="0 0 24 24" fill="#737373" x="760.0" y="784.0" width="22" height="22"><path d="M0 0v11.408h11.408V0zm12.594 0v11.408H24V0zM0 12.594V24h11.408V12.594zm12.594 0V24H24V12.594z"/></svg>
+<text x="788.0" y="802.0" font-size="15" font-weight="600" fill="#5B6B7C" text-anchor="start">Microsoft Purview</text>
+<svg viewBox="0 0 24 24" fill="none" stroke="#5B6B7C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" x="944.0" y="784.0" width="22" height="22">
+  <path d="m16 6 4 14"/>
+  <path d="M12 6v14"/>
+  <path d="M8 8v12"/>
+  <path d="M4 4v16"/>
+</svg>
+<text x="972.0" y="802.0" font-size="15" font-weight="600" fill="#5B6B7C" text-anchor="start">Collibra</text>
+<svg viewBox="0 0 24 24" fill="#0FAAFF" x="1051.7" y="784.0" width="22" height="22"><path d="M0 6.064v11.872h12.13L24 6.064zm3.264 2.208h.005c.863.001 1.915.245 2.676.633l-.82 1.43c-.835-.404-1.255-.442-1.73-.467-.708-.038-1.064.215-1.069.488-.007.332.669.633 1.305.838.964.306 2.19.715 2.377 1.9L7.77 8.437h2.046l2.064 5.576-.007-5.575h2.37c2.257 0 3.318.764 3.318 2.519 0 1.575-1.09 2.514-2.936 2.514h-.763l-.01 2.094-3.588-.003-.25-.908c-.37.122-.787.189-1.23.189-.456 0-.885-.071-1.263-.2l-.358.919-2 .006.09-.462c-.029.025-.057.05-.087.074-.535.43-1.208.629-2.037.644l-.213.002a5.075 5.075 0 0 1-2.581-.675l.73-1.448c.79.467 1.286.572 1.956.558.347-.007.598-.07.761-.239a.557.557 0 0 0 .156-.369c.007-.376-.53-.553-1.185-.756-.531-.164-1.135-.389-1.606-.735-.559-.41-.825-.924-.812-1.65a1.99 1.99 0 0 1 .566-1.377c.519-.537 1.357-.863 2.363-.863zm10.597 1.67v1.904h.521c.694 0 1.247-.23 1.248-.964 0-.709-.554-.94-1.248-.94zm-5.087.767l-.748 2.362c.223.085.481.133.757.133.268 0 .52-.047.742-.126l-.736-2.37z"/></svg>
+<text x="1079.7" y="802.0" font-size="15" font-weight="600" fill="#5B6B7C" text-anchor="start">SAP MDG</text>
+<rect x="1408.0" y="742.0" width="456.0" height="86.0" rx="12" fill="#FBFCFD" stroke="#D0D7DE" stroke-width="1.3"/>
+<text x="1426.0" y="766.0" font-size="11" font-weight="700" fill="#5B6B7C" text-anchor="start" letter-spacing="0.8">A REQUEST CAN END IN</text>
+<rect x="1424.0" y="782.0" width="52.5" height="30.0" rx="15" fill="#E7F6EE" stroke="#047857" stroke-width="1.2"/>
+<text x="1450.3" y="803.0" font-size="14" font-weight="650" fill="#047857" text-anchor="middle">Pass</text>
+<rect x="1486.5" y="782.0" width="96.9" height="30.0" rx="15" fill="#FBF1E1" stroke="#A86A12" stroke-width="1.2"/>
+<text x="1535.0" y="803.0" font-size="14" font-weight="650" fill="#A86A12" text-anchor="middle">Steward fix</text>
+<rect x="1593.4" y="782.0" width="91.3" height="30.0" rx="15" fill="#F3F4F6" stroke="#5B6B7C" stroke-width="1.2"/>
+<text x="1639.1" y="803.0" font-size="14" font-weight="650" fill="#5B6B7C" text-anchor="middle">Deny / ask</text>
+<line x1="56" y1="848" x2="1864" y2="848" stroke="#E6EBF0" stroke-width="1"/>
+<rect x="56.0" y="870.0" width="22.0" height="14.0" rx="3" fill="#F5FBFA" stroke="#0B8A8A" stroke-width="1.3" stroke-dasharray="7 6"/>
+<text x="86.0" y="882.0" font-size="13" font-weight="400" fill="#1B2B3C" text-anchor="start">Governance core</text>
+<rect x="256.0" y="870.0" width="22.0" height="14.0" rx="3" fill="#F5FAF7" stroke="#047857" stroke-width="1.3" stroke-dasharray="7 6"/>
+<text x="286.0" y="882.0" font-size="13" font-weight="400" fill="#1B2B3C" text-anchor="start">Existing AI platform</text>
+<rect x="486.0" y="870.0" width="22.0" height="14.0" rx="3" fill="#FBF1E1" stroke="#E8C989" stroke-width="1.3"/>
+<text x="516.0" y="882.0" font-size="13" font-weight="400" fill="#1B2B3C" text-anchor="start">Human role</text>
+<rect x="656.0" y="870.0" width="22.0" height="14.0" rx="3" fill="#FBFCFD" stroke="#AEBBC8" stroke-width="1.3" stroke-dasharray="6 5"/>
+<text x="686.0" y="882.0" font-size="13" font-weight="400" fill="#1B2B3C" text-anchor="start">Optional buy</text>
+<text x="56.0" y="928.0" font-size="13" font-weight="500" fill="#1F3A5F" text-anchor="start">Mir Mansoor Ahmed  ·  Enterprise Data Governance &amp; Quality Platform  ·  Tarsfeld Group (fiction)  ·  14 November 2026  ·  RULES-AND-POLICIES.md</text>
+<text x="1864.0" y="928.0" font-size="13" font-weight="400" fill="#8A99A8" text-anchor="end">v3  ·  architecture.py</text>
+</svg>
