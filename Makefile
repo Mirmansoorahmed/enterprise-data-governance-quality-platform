@@ -7,7 +7,7 @@
 PYTHON ?= python3
 export PYTHONPATH := src
 
-.PHONY: help bootstrap pull validate test quality scorecard steward labels demo report clean
+.PHONY: help bootstrap pull validate test quality scorecard steward labels hybrid-status demo report clean
 
 help:
 	@echo "Targets:"
@@ -19,6 +19,7 @@ help:
 	@echo "  scorecard  print the KPI scorecard (placeholders unless a run file exists)"
 	@echo "  steward    demo the steward issue/cleanse loop (fail -> issue -> cleanse -> re-run)"
 	@echo "  labels     export the AI-FIT-01 label pack"
+	@echo "  hybrid-status  show which hybrid adapters are live vs mocked (default: all mocked)"
 	@echo "  demo       run the full demo script (oss, under 15 min after image pull)"
 	@echo "  report     build the PDF case-study pack (Phase 8; placeholder until then)"
 
@@ -50,6 +51,9 @@ steward:
 
 labels:
 	$(PYTHON) -m dgqp.labels
+
+hybrid-status:
+	$(PYTHON) -m dgqp.adapters.status_cli
 
 demo:
 	$(PYTHON) -m dgqp.demo

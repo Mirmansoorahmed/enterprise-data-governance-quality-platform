@@ -132,7 +132,14 @@ def run(write_run: bool = False) -> dict:
 
     # 6 buy vs build
     print("[6] Buy vs Build: see docs/DESIGN.md s7. We keep the operating model; "
-          "catalog/MDM are buy options.\n")
+          "catalog/MDM are buy options.")
+
+    # Hybrid posture (adapters default to mocks; absent creds -> all mocked).
+    from .adapters import status as adapter_status
+    hyb = adapter_status.summary()
+    mocked = "all mocked" if adapter_status.all_mocked(hyb) else "some live"
+    print(f"    Hybrid: profile={hyb['profile']}, region={hyb['region']}, "
+          f"HR-to-Azure={hyb['hr_to_azure']}, adapters {mocked}.\n")
 
     duration = round(time.monotonic() - start, 3)
     print(f"Demo finished in {duration}s (budget: under 15 minutes after image pull).")

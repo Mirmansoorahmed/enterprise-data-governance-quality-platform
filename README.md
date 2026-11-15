@@ -64,13 +64,23 @@ here come only from that committed run file; with none, the scorecard reads
 Run `make scorecard` to print the current figures with the exact timestamp and
 SHA of the committed run.
 
+## Hybrid profile (optional)
+
+`DG_PROFILE=hybrid` adds optional, env-only (`DG_*`) Azure adapters (Finance from
+Azure SQL, Product from Blob, Entra group mapping, optional Azure Monitor, and a
+catalog sync that **defaults to a mock**). With no credentials every adapter is
+mocked and `make demo` still runs; CI only runs oss. Region is **Germany West
+Central only**; HR data is never sent to Azure. See [`docs/HYBRID.md`](docs/HYBRID.md)
+for the create-test-delete runbook. `make hybrid-status` shows what is live vs
+mocked.
+
 ## Status
 
-Implemented: Phases 0–8 (repo foundation; synthetic data + ODCS contracts; dbt
+Implemented: Phases 0–9 (repo foundation; synthetic data + ODCS contracts; dbt
 marts + lineage; the quality gate for all `DQ-*` rules; catalog/glossary/RACI;
 classification/RoPA/retention/access; steward workflow; AI-FIT-01 label export +
-gateway fixture; `make demo`/`make report`). Phase 9 (hybrid Azure adapters) is
-planned in [`tasks.md`](tasks.md).
+gateway fixture; `make demo`/`make report`; hybrid Azure adapters, mocked by
+default). Plan and phases in [`tasks.md`](tasks.md).
 
 ## Limitations
 
