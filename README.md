@@ -74,6 +74,11 @@ Central only**; HR data is never sent to Azure. See [`docs/HYBRID.md`](docs/HYBR
 for the create-test-delete runbook. `make hybrid-status` shows what is live vs
 mocked.
 
+A live Azure session on 2026-11-16 read Finance (Azure SQL) and Product (Azure
+Blob) live, with quality-gate results identical to the mock baseline — see
+[`eval/results/hybrid-2026-11-16T173324Z.json`](eval/results/hybrid-2026-11-16T173324Z.json)
+and the Results section of [`docs/HYBRID.md`](docs/HYBRID.md).
+
 ## Status
 
 Implemented: Phases 0–9 (repo foundation; synthetic data + ODCS contracts; dbt

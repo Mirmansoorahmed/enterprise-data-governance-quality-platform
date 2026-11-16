@@ -137,9 +137,11 @@ def test_hybrid_doc_has_required_sections():
     with open(os.path.join(REPO_ROOT, "docs", "HYBRID.md"), encoding="utf-8") as fh:
         text = fh.read()
     for needed in ("Germany West Central", "Teardown", "Results",
-                   "TO BE MEASURED (live session pending)",
                    "DG_PROFILE", "create", "delete"):
         assert needed in text, needed
+    # After the 2026-11-16 live session the Results section points at the
+    # committed hybrid run file (the "live session pending" placeholder is gone).
+    assert "eval/results/hybrid-2026-11-16T173324Z.json" in text
 
 
 def test_hybrid_doc_leaks_no_identifiers():

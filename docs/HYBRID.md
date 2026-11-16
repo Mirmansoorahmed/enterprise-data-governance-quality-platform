@@ -139,22 +139,46 @@ falls back to the mock. The connection uses TLS (TDS 7.4, port 1433).
 
 ## Teardown checklist (same session)
 
-- [ ] Capture the portal cost / zero-charge screenshot into the run folder (if
-      reporting cost).
-- [ ] Delete the Azure SQL Database (and its logical server if created for this).
-- [ ] Delete the Storage account (and the container within it).
-- [ ] Delete the Log Analytics workspace, if created.
-- [ ] Remove any Entra app registration created for the test, if applicable.
-- [ ] Delete the resource group if it was created only for this session.
-- [ ] Unset the `DG_*` environment variables.
-- [ ] Confirm in the portal that no resource from this session remains.
+- [x] Capture the portal cost / zero-charge screenshot into the run folder
+      (Cost analysis reported 0.00).
+- [x] Delete the Azure SQL Database (and its logical server if created for this).
+- [x] Delete the Storage account (and the container within it).
+- [x] Delete the Log Analytics workspace, if created (none created; remained mock).
+- [x] Remove any Entra app registration created for the test, if applicable
+      (none created; Entra remained mock).
+- [x] Delete the resource group if it was created only for this session.
+- [x] Unset the `DG_*` environment variables.
+- [x] Confirm in the portal that no resource from this session remains.
 
 ## Results
 
-**TO BE MEASURED (live session pending).**
+Measured live session: **2026-11-16**, commit **84a1ad8**, region **Germany West
+Central**. Run file:
+[`eval/results/hybrid-2026-11-16T173324Z.json`](../eval/results/hybrid-2026-11-16T173324Z.json).
 
-No live hybrid numbers exist. After an approved create-test-delete session,
-record here — with a UTC timestamp and git SHA — which adapters ran **live** vs
-**mocked**, the region, the SKU, the measured portal cost (or zero), and that
-teardown completed. Keep live and mock results separate; never blend them, and
-never invent a figure.
+| Domain | Adapter | Backend | Rows | Gate rule | Findings |
+|---|---|---|---|---|---|
+| Finance | Azure SQL Database (serverless, free offer) | **live** | 5 | DQ-FIN-001 | 2 |
+| Product | Azure Blob Storage (read-only container SAS, stdlib urllib) | **live** | 5 | DQ-PRD-001 | 2 |
+
+- **HR stayed local** (`hr_to_azure=false`); no HR data was sent to Azure.
+- Entra, Azure Monitor and the catalog adapter **remained mock**.
+- The findings match the mock baseline exactly, so the live read and the gate
+  behave identically to the offline path.
+- **Portal cost: 0.00** (Cost analysis), resources deleted the same session.
+
+Live and mock domains are kept separate in the run file; no figure is invented,
+and no secret, server/account name or subscription id is recorded.
+
+### Lessons learned
+
+- The Query editor's **Entra (Azure AD) view cannot sign in without an Entra
+  admin** configured on the SQL server; use **SQL authentication** / the classic
+  login view instead.
+- A **restricted-egress environment that only allows HTTP(S)** cannot reach the
+  SQL port **1433**. The Azure Blob read works there (HTTPS + SAS), but the SQL
+  read was run from **Azure Cloud Shell** with **"Allow Azure services and
+  resources to access this server"** enabled **only for the test** and disabled
+  again immediately afterwards.
+- **Teardown:** the resource group was deleted in the same session and **Cost
+  analysis reported 0.00**.
