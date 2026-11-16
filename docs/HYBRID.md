@@ -53,16 +53,18 @@ created (catalog stays mocked).
 DG_PROFILE=hybrid
 DG_AZURE_REGION=germanywestcentral
 
-# Azure SQL (Finance)
+# Azure SQL (Finance) — live read uses the optional pymssql driver
 DG_AZURE_SQL_SERVER=...
 DG_AZURE_SQL_DATABASE=...
 DG_AZURE_SQL_USER=...
 DG_AZURE_SQL_PASSWORD=...
+DG_AZURE_SQL_TABLE=finance_postings   # optional, default finance_postings
 
-# Azure Blob (Product)
+# Azure Blob (Product) — live read uses stdlib urllib + a read-only SAS
 DG_AZURE_STORAGE_ACCOUNT=...
 DG_AZURE_STORAGE_CONTAINER=...
-DG_AZURE_STORAGE_KEY=...        # or DG_AZURE_STORAGE_SAS=...
+DG_AZURE_STORAGE_SAS=...               # read-only container SAS (preferred)
+DG_AZURE_STORAGE_BLOB=products.csv     # optional, default products.csv
 
 # Entra (optional; mock if unavailable)
 DG_ENTRA_TENANT_ID=...
@@ -76,6 +78,20 @@ DG_CATALOG_BACKEND=mock
 ```
 
 Any variable left unset makes its adapter fall back to the mock.
+
+### Driver for the Azure SQL live read
+
+The Azure Blob live read needs **no** driver (standard-library `urllib` over
+HTTPS with the read-only SAS). The Azure SQL live read needs the optional
+`pymssql` driver:
+
+```
+pip install pymssql          # or: pip install .[hybrid]
+```
+
+If the `DG_AZURE_SQL_*` credentials are set but `pymssql` is not installed, the
+adapter raises a clear error and tells you to install it — it never silently
+falls back to the mock. The connection uses TLS (TDS 7.4, port 1433).
 
 ## Cost notes
 
@@ -92,12 +108,34 @@ Any variable left unset makes its adapter fall back to the mock.
 
 ## Smoke test
 
-1. Set the `DG_*` variables for the resources you created.
-2. Load one **non-HR** domain from Azure (Finance from SQL, or Product from
-   Blob) and run the quality gate over it.
-3. Run `make demo` and confirm it reports the hybrid posture (which adapters are
-   live vs mocked). Confirm the catalog sync reports **mock**.
-4. Confirm HR was not touched by any Azure adapter.
+1. **Seed the Finance table.** Generate the seed SQL from the synthetic finance
+   extract and paste it into the Azure portal **Query editor**:
+
+   ```
+   python3 scripts/hybrid_seed.py      # writes scripts/hybrid_seed_sql.sql
+   ```
+
+   The script uses only the synthetic finance extract (no HR, no real data). Run
+   the generated `CREATE TABLE` + `INSERT` statements against the database.
+2. **Upload the Product blob.** Upload `data/raw/product/products.csv` to the
+   container as `products.csv` (or set `DG_AZURE_STORAGE_BLOB` to its name) and
+   mint a **read-only container SAS** for `DG_AZURE_STORAGE_SAS`.
+3. Set the `DG_*` variables for the resources you created (and
+   `pip install pymssql` for the SQL read).
+4. Run the smoke:
+
+   ```
+   python -m dgqp.cli hybrid-smoke
+   ```
+
+   It reads the non-HR domains from whichever adapters are live (Finance from
+   SQL, Product from Blob), runs the quality gate over the rows it got, prints
+   which adapters are live vs mock with per-domain row counts and findings, and
+   writes `eval/results/hybrid-<UTC>.json` (live and mock separated; region
+   recorded; no secret, server/account name or subscription id written). It
+   asserts HR was not touched by any Azure adapter.
+5. Optionally run `make demo`; confirm the hybrid posture line and that the
+   catalog sync reports **mock**.
 
 ## Teardown checklist (same session)
 

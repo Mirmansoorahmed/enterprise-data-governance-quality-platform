@@ -2,13 +2,16 @@
 
 Subcommands
 -----------
-``validate``   Structurally validate every ODCS contract and governance file.
-``scorecard``  Print the KPI scorecard (placeholders unless a run file exists).
+``validate``      Structurally validate every ODCS contract and governance file.
+``scorecard``     Print the KPI scorecard (placeholders unless a run file exists).
+``hybrid-smoke``  Read non-HR domains from the configured adapters (live or mock),
+                  run the quality gate, and write a hybrid run file.
 
 Standard-library only, so it runs in the offline CI sandbox. Usage::
 
     python -m dgqp.cli validate
     python -m dgqp.cli scorecard
+    python -m dgqp.cli hybrid-smoke
 """
 
 from __future__ import annotations
@@ -77,6 +80,24 @@ def cmd_scorecard() -> int:
     return 0
 
 
+def cmd_hybrid_smoke(write: bool = True) -> int:
+    from .adapters import smoke
+
+    summary = smoke.run()
+    print(f"Hybrid smoke — profile={summary['profile']}, region={summary['region']}, "
+          f"HR-to-Azure={summary['hr_to_azure']}")
+    for a in summary["adapters"]:
+        print(f"  adapter {a['name']}: {'live' if a['live'] else 'mock'}")
+    for d in summary["domains"]:
+        print(f"  {d['domain']} [{d['backend']}]: {d['row_count']} rows, "
+              f"{d['gate_rule']} findings={d['gate_findings']}")
+    if write:
+        path = smoke.write_run(summary)
+        print(f"\nWrote {os.path.relpath(path, REPO_ROOT)} "
+              f"(live and mock separated; no secrets recorded).")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     argv = sys.argv[1:] if argv is None else argv
     if not argv:
@@ -87,6 +108,8 @@ def main(argv: list[str] | None = None) -> int:
         return cmd_validate()
     if command == "scorecard":
         return cmd_scorecard()
+    if command == "hybrid-smoke":
+        return cmd_hybrid_smoke(write="--no-write" not in argv)
     print(f"unknown command: {command}", file=sys.stderr)
     return 2
 

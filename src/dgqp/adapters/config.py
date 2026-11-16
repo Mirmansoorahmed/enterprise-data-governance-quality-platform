@@ -68,9 +68,21 @@ def azure_sql_live() -> bool:
 
 
 def azure_blob_live() -> bool:
-    return is_hybrid() and _present(
-        "DG_AZURE_STORAGE_ACCOUNT", "DG_AZURE_STORAGE_CONTAINER",
-    ) and (os.environ.get("DG_AZURE_STORAGE_KEY") or os.environ.get("DG_AZURE_STORAGE_SAS"))
+    return bool(
+        is_hybrid()
+        and _present("DG_AZURE_STORAGE_ACCOUNT", "DG_AZURE_STORAGE_CONTAINER")
+        and (os.environ.get("DG_AZURE_STORAGE_KEY") or os.environ.get("DG_AZURE_STORAGE_SAS"))
+    )
+
+
+def azure_sql_table() -> str:
+    """Finance source table name. Defaults to ``finance_postings``."""
+    return os.environ.get("DG_AZURE_SQL_TABLE", "finance_postings").strip() or "finance_postings"
+
+
+def azure_storage_blob() -> str:
+    """Product source blob name. Defaults to ``products.csv``."""
+    return os.environ.get("DG_AZURE_STORAGE_BLOB", "products.csv").strip() or "products.csv"
 
 
 def entra_live() -> bool:

@@ -222,3 +222,7 @@ __marimo__/
 # DGQP build artefacts (reproducible via `make report`).
 # The case-study PDF is generated; committed run files under eval/results/ are NOT ignored.
 report/case-study.pdf
+
+# Hybrid smoke run files are generated per session (mock or live).
+# Commit a real live-session result deliberately; do not commit mock smoke runs.
+eval/results/hybrid-*.json

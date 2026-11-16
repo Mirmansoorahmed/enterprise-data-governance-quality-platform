@@ -134,3 +134,33 @@ def _check_hr(result: GateResult) -> None:
         result.checked += 1
         if not rules.hr_record_current(row):
             _record(result, "DQ-HR-001", key, "HR record outside currentness window")
+
+
+# --- gate over provided rows (used by the hybrid smoke) -------------------
+
+def check_finance_rows(postings: list[dict], reference: list[dict] | None = None) -> GateResult:
+    """Run DQ-FIN-001 (referential integrity) over provided finance postings.
+
+    The reconciliation check needs control totals, which a live source table
+    does not carry, so only the referential-integrity part runs here.
+    """
+    if reference is None:
+        reference = synthdata.read_csv(os.path.join(REFERENCE, "finance_company_codes.csv"))
+    result = GateResult()
+    for i, row in enumerate(postings):
+        key = f"{row.get('posting_id', '?')}#{i}"
+        result.checked += 1
+        if not rules.finance_cost_centre_valid(row, reference):
+            _record(result, "DQ-FIN-001", key, "cost_centre_id missing/unknown/inactive")
+    return result
+
+
+def check_product_rows(products: list[dict]) -> GateResult:
+    """Run DQ-PRD-001 (mandatory attributes) over provided product rows."""
+    result = GateResult()
+    for i, row in enumerate(products):
+        key = f"{row.get('product_id', '?')}#{i}"
+        result.checked += 1
+        if not rules.product_mandatory_present(row):
+            _record(result, "DQ-PRD-001", key, "mandatory product attribute missing")
+    return result
