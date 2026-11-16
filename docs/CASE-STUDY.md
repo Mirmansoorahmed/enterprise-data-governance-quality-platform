@@ -17,7 +17,7 @@ Technical design: [`DESIGN.md`](DESIGN.md). Source-cited rules: [`RULES-AND-POLI
 - Synthetic data and fictional names only. No real client data, no home address, no personal phone numbers. Even synthetic HR PII stays local in the lab and is not uploaded to Azure.
 - Cloud and vendor choices must be honest: adapters and feature flags, a path that runs without paid APIs, and unverified account limits listed as TODOs to check.
 - Commits in the real repo: no `Co-authored-by`, no AI attribution.
-- No real employer brand (no Telekom, Magenta, PwC, or others) and no real company presented as the client.
+- No real employer brand and no real company presented as the client. The client is a fictional client, not a real firm.
 
 ---
 

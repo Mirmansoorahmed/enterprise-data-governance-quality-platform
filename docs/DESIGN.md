@@ -66,7 +66,7 @@ These are the backlog the lab must be able to demo. Counts are from the 33-ad ge
 
 | Function | Frequency (n = 33) | What the lab shows |
 |---|---|---|
-| Data quality rules, monitoring or KPIs | 30/33 | Great Expectations and dbt tests, plus a KPI scorecard, against the sourced rules in `RULES-AND-POLICIES.md` (ISO 8000 and ISO/IEC 25012). Figures are TARGETS until a committed run exists. |
+| Data quality rules, monitoring or KPIs | 30/33 | Great Expectations and dbt tests, plus a KPI scorecard, against the sourced rules in `RULES-AND-POLICIES.md` (ISO 8000 and ISO/IEC 25012). Figures are measured on the committed run `eval/results/demo-2026-11-15T111652Z.json` (any figure without a committed run stays TARGET). |
 | Ownership, stewardship or RACI | 24/33 | YAML register and a nomination / review view: Domain Data Owner, Data Steward (Datenverantwortlicher), DPO / IT. Why those titles are used is in `RULES-AND-POLICIES.md` §7. |
 | Catalog or glossary | 20/33 | Default: OpenMetadata (catalog, glossary, tags). Glossary terms in English with German aliases. OpenMetadata itself was named in 0/33 ads; it is the honest OSS stand-in for the function, not a claimed market tool. |
 | Policies and standards | 18/33 | Versioned policy files and a short standards note per domain, linked to the contracts, drawn from the catalog. |
@@ -185,9 +185,9 @@ Fictional setting: Northwind Advisory at Tarsfeld Group. Synthetic data only. De
 
 ---
 
-## 10. Metrics *(TARGETS — nothing measured yet)*
+## 10. Metrics *(scorecard measured on the committed run `eval/results/demo-2026-11-15T111652Z.json`; the table below is the design budget)*
 
-No number in a README, report or CV bullet may be invented. Every figure must come from a committed run with timestamp and git SHA. Until then, write **TARGET** or “to be measured”. Persist runs under something like `eval/results/` (quality scorecard, coverage, demo duration, and, when a hybrid session happens, a separate hybrid note that does not blend mocked and live results).
+No number in a README, report or CV bullet may be invented. Every figure must come from a committed run with timestamp and git SHA. The scorecard is now measured on the committed run `eval/results/demo-2026-11-15T111652Z.json` (completeness 0.762, uniqueness 0.875, consistency 0.714, currentness 0.40, key match 0.857; dirty-by-design data, so rates are below 1.0 on purpose). Any figure not backed by a committed run still reads **TARGET** or “to be measured”. Runs are persisted under `eval/results/` (quality scorecard, coverage, demo duration, and, when a hybrid session happens, a separate hybrid note that does not blend mocked and live results).
 
 | Metric | What will be measured | TARGET (design budget, not a result) |
 |---|---|---|
@@ -245,7 +245,7 @@ Each phase must be demoable on its own once complete. Prefer small, testable sli
 0. Repo foundation: Makefile, Compose skeleton, CI, JSON/ODCS schemas, docs placement, commit conventions.
 1. Synthetic data + ODCS v3.2.0 contracts (four domains, two countries, dirty extracts).
 2. dbt domain marts + lineage (one KPI path per domain).
-3. Quality gate: all `DQ-*` rules; scorecard TARGETS until a committed run exists.
+3. Quality gate: all `DQ-*` rules; scorecard measured on the committed run `eval/results/demo-2026-11-15T111652Z.json` (TARGET only where no committed run backs a figure).
 4. Catalog, glossary (EN+DE), ownership / RACI, `GOV-*`.
 5. Classification, RoPA, retention flags, access policies `POL-GDPR-01`–`06`.
 6. Steward issue / cleanse workflow and re-run.
