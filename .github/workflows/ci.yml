@@ -22,6 +22,9 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install test runner
+        run: python -m pip install pytest
+
       - name: Validate ODCS contracts and governance files
         run: python -m dgqp.cli validate
         env:
