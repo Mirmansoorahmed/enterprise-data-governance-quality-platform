@@ -1,0 +1,96 @@
+{
+  "service": "tarsfeld-dgqp",
+  "glossary": "Tarsfeld Data Governance Glossary",
+  "elements": [
+    {
+      "element_id": "customer.customer_id",
+      "domain": "Customer",
+      "term_en": "Customer identifier",
+      "term_de": "Kundennummer",
+      "definition": "Stable party key for a customer, unique across the country companies.",
+      "technical_name": "customers.customer_id",
+      "classification": [
+        "master.customer"
+      ],
+      "contract_id": "tarsfeld-customer",
+      "quality_rules": [
+        "DQ-CUS-002"
+      ],
+      "owner": "Data Owner (Customer)",
+      "steward": "Data Steward (Datenverantwortlicher, Customer)",
+      "dpo_consulted": false
+    },
+    {
+      "element_id": "customer.email",
+      "domain": "Customer",
+      "term_en": "Customer contact email",
+      "term_de": "Kontakt-E-Mail",
+      "definition": "Email address used to reach a customer contact. Personal data.",
+      "technical_name": "customers.email",
+      "classification": [
+        "pii.contact"
+      ],
+      "contract_id": "tarsfeld-customer",
+      "quality_rules": [
+        "DQ-CUS-001"
+      ],
+      "owner": "Data Owner (Customer)",
+      "steward": "Data Steward (Datenverantwortlicher, Customer)",
+      "dpo_consulted": true
+    },
+    {
+      "element_id": "product.product_id",
+      "domain": "Product",
+      "term_en": "Product identifier",
+      "term_de": "Produktnummer",
+      "definition": "Master key for a product or material.",
+      "technical_name": "products.product_id",
+      "classification": [
+        "master.product"
+      ],
+      "contract_id": "tarsfeld-product",
+      "quality_rules": [
+        "DQ-PRD-001"
+      ],
+      "owner": "Data Owner (Product)",
+      "steward": "Data Steward (Datenverantwortlicher, Product)",
+      "dpo_consulted": false
+    },
+    {
+      "element_id": "finance.cost_centre_id",
+      "domain": "Finance",
+      "term_en": "Cost centre identifier",
+      "term_de": "Kostenstelle",
+      "definition": "Reference to an active cost centre in the company-code reference list.",
+      "technical_name": "finance_postings.cost_centre_id",
+      "classification": [
+        "confidential.finance"
+      ],
+      "contract_id": "tarsfeld-finance",
+      "quality_rules": [
+        "DQ-FIN-001"
+      ],
+      "owner": "Data Owner (Finance)",
+      "steward": "Data Steward (Datenverantwortlicher, Finance)",
+      "dpo_consulted": false
+    },
+    {
+      "element_id": "hr.employee_id",
+      "domain": "HR",
+      "term_en": "Employee identifier",
+      "term_de": "Personalnummer",
+      "definition": "Master key for an employee record. Sensitive personal data; local-only.",
+      "technical_name": "employees.employee_id",
+      "classification": [
+        "pii.hr"
+      ],
+      "contract_id": "tarsfeld-hr",
+      "quality_rules": [
+        "DQ-HR-001"
+      ],
+      "owner": "Data Owner (HR)",
+      "steward": "Data Steward (Datenverantwortlicher, HR)",
+      "dpo_consulted": true
+    }
+  ]
+}

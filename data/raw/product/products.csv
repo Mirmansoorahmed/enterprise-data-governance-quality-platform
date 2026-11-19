@@ -1,0 +1,6 @@
+product_id,company,name,status,unit_of_measure
+P-100,DE01,Widget,active,EA
+P-101,DE01,Gadget,active,EA
+P-200,AT01,Sprocket,active,KG
+P-102,DE01,,active,
+P-201,AT01,Flange,,EA

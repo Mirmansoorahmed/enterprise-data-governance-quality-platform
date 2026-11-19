@@ -1,0 +1,42 @@
+# Classification assignments and retention classes.
+#
+# The tag set: pii.contact, pii.hr, confidential.finance, master.customer,
+# master.product, fit_for_ai, not_fit_for_ai. fit_for_ai / not_fit_for_ai are
+# decided by the AI-FIT-01 gate (Phase 7), not assigned statically here.
+#
+# retention: flag only. A row past its retention date is FLAGGED; the lab never
+# performs production deletion (POL-GDPR-03).
+
+fields:
+  - field: customer.email
+    classification: [pii.contact]
+    retention_class: customer-standard
+  - field: customer.customer_id
+    classification: [master.customer]
+    retention_class: customer-standard
+  - field: finance.cost_centre_id
+    classification: [confidential.finance]
+    retention_class: finance-standard
+  - field: finance.amount
+    classification: [confidential.finance]
+    retention_class: finance-standard
+  - field: product.product_id
+    classification: [master.product]
+    retention_class: product-standard
+  - field: hr.employee_id
+    classification: [pii.hr]
+    retention_class: hr-sensitive
+
+retention_classes:
+  - name: customer-standard
+    description: Standard customer retention window (lab parameter).
+    window_days: 3650
+  - name: finance-standard
+    description: Standard finance retention window (lab parameter).
+    window_days: 3650
+  - name: product-standard
+    description: Product master retention (lab parameter).
+    window_days: 3650
+  - name: hr-sensitive
+    description: HR sensitive retention window (lab parameter, local-only).
+    window_days: 3650

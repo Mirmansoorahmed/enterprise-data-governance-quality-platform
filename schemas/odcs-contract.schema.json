@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/dgqp/odcs-contract.schema.json",
+  "title": "ODCS v3.2.0 data contract (structural subset)",
+  "description": "Structural check for our Open Data Contract Standard v3.2.0 YAML contracts. This is the documented unit equivalent used in the offline CI sandbox; the official ODCS JSON Schema can be run with jsonschema where network allows (requirements R1.4, design s10). It does not claim the contract is a certified ODCS product.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["apiVersion", "kind", "id", "name", "schema", "customProperties"],
+  "properties": {
+    "apiVersion": { "type": "string", "const": "v3.2.0" },
+    "kind": { "type": "string", "const": "DataContract" },
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "version": { "type": "string" },
+    "domain": {
+      "type": "string",
+      "enum": ["Customer", "Product", "Finance", "HR", "reference"]
+    },
+    "schema": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["name", "properties"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "properties": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": true,
+              "required": ["name", "logicalType"],
+              "properties": {
+                "name": { "type": "string", "minLength": 1 },
+                "logicalType": {
+                  "type": "string",
+                  "enum": ["string", "integer", "number", "boolean", "date"]
+                },
+                "required": { "type": "boolean" },
+                "unique": { "type": "boolean" },
+                "pattern": { "type": "string" },
+                "classification": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "customProperties": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["classification", "owner", "steward"],
+      "properties": {
+        "policyIds": { "type": "array", "items": { "type": "string" } },
+        "qualityRuleIds": { "type": "array", "items": { "type": "string" } },
+        "classification": { "type": "array", "items": { "type": "string" } },
+        "owner": { "type": "string", "minLength": 1 },
+        "steward": { "type": "string", "minLength": 1 },
+        "retentionClass": { "type": "string" },
+        "mediaType": { "type": "string" },
+        "localOnly": { "type": "boolean" }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "hybrid",
+  "generated_at": "2026-11-16T17:33:24Z",
+  "git_sha": "84a1ad8",
+  "profile": "hybrid",
+  "metrics": {
+    "region": "germanywestcentral",
+    "hr_to_azure": false,
+    "live": [
+      {
+        "domain": "Finance",
+        "adapter": "azure_sql",
+        "backend": "live",
+        "row_count": 5,
+        "gate_rule": "DQ-FIN-001",
+        "gate_findings": 2
+      },
+      {
+        "domain": "Product",
+        "adapter": "azure_blob",
+        "backend": "live",
+        "row_count": 5,
+        "gate_rule": "DQ-PRD-001",
+        "gate_findings": 2
+      }
+    ],
+    "mock": []
+  },
+  "notes": "Hybrid smoke. Live and mock domains are listed separately. No secret, server/account name or subscription id is recorded. No live numbers are invented; figures are measured on the rows actually read."
+}

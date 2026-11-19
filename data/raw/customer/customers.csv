@@ -1,0 +1,9 @@
+customer_id,company,name,email,vat_id
+C-DE-1001,DE01,Alpha GmbH,contact@alpha.example,DE111111111
+C-DE-1002,DE01,Beta AG,hello@beta.example,DE222222222
+C-AT-2001,AT01,Gamma GmbH,office@gamma.example,ATU33333333
+C-DE-1003,DE01,Delta KG,,DE444444444
+C-AT-2002,AT01,Epsilon GmbH,not-an-email,ATU55555555
+C-DE-1001,AT01,Alpha Austria,at@alpha.example,ATU66666666
+C-DE-1004,DE01,Zeta GmbH,z@zeta.example,DE12AB
+C-AT-2003,AT01,Eta Verein,e@eta.example,

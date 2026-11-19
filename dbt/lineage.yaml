@@ -1,0 +1,41 @@
+# Lineage descriptors: source extract -> mart -> scorecard, one KPI per domain
+# (requirements R2.2). dbt is the declarative tool of record (project skeleton
+# alongside this file); these descriptors are the machine-readable lineage the
+# catalog and report render, and the offline CI checks (design s10).
+
+datasets:
+  - domain: Customer
+    kpi: customer_reachability
+    source: data/raw/customer/customers.csv
+    mart: marts.customer_kpi
+    scorecard_dimension: completeness
+    rules:
+      - DQ-CUS-001
+      - DQ-CUS-002
+      - DQ-CUS-003
+
+  - domain: Product
+    kpi: product_completeness
+    source: data/raw/product/products.csv
+    mart: marts.product_kpi
+    scorecard_dimension: completeness
+    rules:
+      - DQ-PRD-001
+
+  - domain: Finance
+    kpi: finance_valid_spend
+    source: data/raw/finance/finance_postings.csv
+    reference: data/reference/finance_company_codes.csv
+    mart: marts.finance_kpi
+    scorecard_dimension: consistency
+    rules:
+      - DQ-FIN-001
+
+  - domain: HR
+    kpi: hr_currentness
+    source: data/raw/hr/employees.csv
+    mart: marts.hr_kpi
+    scorecard_dimension: currentness
+    rules:
+      - DQ-HR-001
+    local_only: true

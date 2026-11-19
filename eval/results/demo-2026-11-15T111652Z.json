@@ -1,0 +1,15 @@
+{
+  "kind": "scorecard",
+  "generated_at": "2026-11-15T11:16:52Z",
+  "git_sha": "5bbf0d8",
+  "profile": "oss",
+  "metrics": {
+    "completeness": 0.762,
+    "consistency": 0.714,
+    "uniqueness": 0.875,
+    "currentness": 0.4,
+    "cross_domain_key_match": 0.857,
+    "demo_duration_seconds": 0.005
+  },
+  "notes": "Measured by `make demo --write-run` on the committed synthetic extracts. Dirty-by-design data, so rates are below 1.0 on purpose."
+}

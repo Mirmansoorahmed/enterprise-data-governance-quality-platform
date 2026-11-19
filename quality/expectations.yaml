@@ -1,0 +1,53 @@
+# Great Expectations-style declarative mirror of the DQ-* rules. The canonical,
+# executed implementation is src/dgqp/quality/ (design s10). Each entry names
+# the rule, the GE expectation it corresponds to, the catalog severity and the
+# on-fail action tokens enforced by the gate.
+
+suites:
+  - rule_id: DQ-CUS-001
+    domain: Customer
+    engine: great_expectations
+    expectation: expect_column_values_to_match_regex
+    column: email
+    severity: high
+    actions: [quarantine, open_issue, no_export, not_fit_for_ai]
+
+  - rule_id: DQ-CUS-002
+    domain: Customer
+    engine: dbt
+    expectation: expect_column_values_to_be_unique
+    column: customer_id
+    severity: critical
+    actions: [block_product, open_issue]
+
+  - rule_id: DQ-CUS-003
+    domain: Customer
+    engine: great_expectations
+    expectation: expect_column_values_to_match_regex_list_when_present
+    column: vat_id
+    severity: high
+    actions: [quarantine, open_issue, no_export]
+
+  - rule_id: DQ-PRD-001
+    domain: Product
+    engine: great_expectations
+    expectation: expect_column_values_to_not_be_null
+    columns: [product_id, name, status, unit_of_measure]
+    severity: high
+    actions: [quarantine, open_issue]
+
+  - rule_id: DQ-FIN-001
+    domain: Finance
+    engine: dbt
+    expectation: relationships_and_reconciliation
+    column: cost_centre_id
+    severity: critical
+    actions: [block_mart_row, open_issue, no_export]
+
+  - rule_id: DQ-HR-001
+    domain: HR
+    engine: great_expectations
+    expectation: expect_currentness_window
+    columns: [status, effective_from, effective_to, last_verified_on]
+    severity: high
+    actions: [quarantine, open_issue, not_fit_for_ai, no_export]

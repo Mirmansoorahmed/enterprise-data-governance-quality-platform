@@ -1,0 +1,6 @@
+employee_id,company,status,effective_from,effective_to,last_verified_on
+E-1,DE01,active,2022-01-01,,2026-10-01
+E-2,AT01,active,2023-03-15,,2026-09-20
+E-3,DE01,active,2021-06-01,,2024-01-01
+E-4,AT01,leaver,2020-02-01,,2026-10-10
+E-5,DE01,,2024-05-01,,2026-10-05

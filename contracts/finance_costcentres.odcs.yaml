@@ -1,0 +1,31 @@
+apiVersion: v3.2.0
+kind: DataContract
+id: tarsfeld-finance-costcentres
+name: Tarsfeld Cost Centre Reference List
+version: 1.0.0
+domain: reference
+description: Company-code cost-centre reference used by DQ-FIN-001 referential integrity.
+schema:
+  - name: finance_company_codes
+    physicalName: finance_company_codes.csv
+    properties:
+      - name: cost_centre_id
+        logicalType: string
+        required: true
+        unique: true
+      - name: company
+        logicalType: string
+        required: true
+      - name: active
+        logicalType: boolean
+        required: true
+customProperties:
+  mediaType: application/odcs+yaml;version=3.2.0
+  owner: Data Owner (Finance)
+  steward: Data Steward (Datenverantwortlicher, Finance)
+  classification:
+    - confidential.finance
+  policyIds: []
+  qualityRuleIds: []
+  retentionClass: reference
+  localOnly: false

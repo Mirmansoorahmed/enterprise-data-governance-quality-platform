@@ -1,0 +1,57 @@
+apiVersion: v3.2.0
+kind: DataContract
+id: tarsfeld-hr
+name: Tarsfeld HR Data Product
+version: 1.0.0
+domain: HR
+description: >
+  Synthetic employee master. Most sensitive domain. Local-only: never
+  configured for an Azure source (localOnly=true).
+schema:
+  - name: employees
+    physicalName: employees.csv
+    properties:
+      - name: employee_id
+        logicalType: string
+        required: true
+        unique: true
+        classification: pii.hr
+      - name: company
+        logicalType: string
+        required: true
+      - name: status
+        logicalType: string
+        required: true
+        description: Mandatory per DQ-HR-001.
+      - name: effective_from
+        logicalType: date
+        required: true
+      - name: effective_to
+        logicalType: date
+        required: false
+        description: Required for a leaver (DQ-HR-001).
+      - name: last_verified_on
+        logicalType: date
+        required: true
+        description: Must be within the currentness window (DQ-HR-001).
+customProperties:
+  mediaType: application/odcs+yaml;version=3.2.0
+  owner: Data Owner (HR)
+  steward: Data Steward (Datenverantwortlicher, HR)
+  classification:
+    - pii.hr
+  policyIds:
+    - POL-GDPR-01
+    - POL-GDPR-02
+    - POL-GDPR-03
+    - POL-GDPR-04
+    - POL-GDPR-06
+  qualityRuleIds:
+    - DQ-HR-001
+  retentionClass: hr-sensitive
+  localOnly: true
+  currentnessWindowDays: 365
+  currentnessReferenceDate: "2026-11-15"
+  currentnessNote: >
+    The currentness window is a contract parameter for the synthetic set, not a
+    statutory retention period.

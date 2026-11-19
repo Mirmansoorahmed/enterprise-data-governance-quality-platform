@@ -1,0 +1,20 @@
+%% Structural sketch of the published v3 figure (architecture.png / architecture.svg).
+%%{init: {"flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 20, "rankSpacing": 28}}}%%
+flowchart LR
+  classDef exists fill:#E7F6EE,stroke:#047857,color:#064E3B
+  classDef core fill:#E7F4F3,stroke:#0B8A8A,color:#0F2A47
+  classDef src fill:#F6F8FA,stroke:#1F3A5F,color:#0F2A47
+  classDef buy fill:#FBFCFD,stroke:#AEBBC8,color:#5B6B7C,stroke-dasharray: 5 3
+  classDef human fill:#FBF1E1,stroke:#A86A12,color:#78350F
+
+  SRC["1 · Data sources\nCustomer · Product · Finance · HR\n(synthetic only)"]:::src
+  CQ["2 · Contracts & quality gate\nData contracts → Quality gate\n(Great Expectations · dbt)"]:::core
+  GC["3 · Governance core\nCatalog & glossary · Lineage\nClassification · Ownership / RACI · Policies"]:::core
+  CONS["4 · Consumers\nKPI scorecard · Data products\nAI label export"]:::exists
+
+  SRC --> CQ --> GC --> CONS
+
+  HUM["People in the loop · Owner · Steward · DPO"]:::human
+  BUY["Optional buy, not built · Purview · Collibra · SAP MDG"]:::buy
+  GC --- HUM
+  GC --- BUY

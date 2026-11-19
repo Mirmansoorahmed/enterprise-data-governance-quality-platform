@@ -1,0 +1,22 @@
+# Local demo skeleton (oss profile). NOT required for CI or for the Python
+# quality engine — `make test`, `make validate`, `make quality` and
+# `make scorecard` all run without Docker.
+#
+# OpenMetadata brings the catalog, glossary and lineage UI for the local
+# `make demo` walkthrough. Images are pulled once with `make bootstrap`, which
+# sits OUTSIDE the `make demo` 15-minute clock. CI uses recorded catalog
+# fixtures instead of this stack (requirements R4.1, design s10).
+#
+# Pinned image tags and full service wiring (MySQL/Postgres, Elasticsearch,
+# the OpenMetadata server and ingestion) are added in Phase 4, where the
+# catalog/glossary work lands. This skeleton documents the intent and keeps the
+# compose entrypoint stable.
+
+services:
+  openmetadata:
+    image: docker.getcollate.io/openmetadata/server:latest
+    profiles: ["demo"]
+    # Full configuration (dependencies, env, healthchecks, ports) is wired in
+    # Phase 4. Kept behind the "demo" compose profile so a plain `docker compose
+    # up` does not start a heavy stack by accident.
+    restart: "no"

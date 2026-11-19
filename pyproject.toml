@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dgqp"
+version = "0.0.0"
+description = "Enterprise Data Governance & Quality Platform (lab / portfolio)"
+readme = "README.md"
+requires-python = ">=3.10"
+# The oss core is standard-library only: no runtime dependencies. CI installs
+# nothing and runs offline.
+dependencies = []
+
+[project.optional-dependencies]
+# Only the optional hybrid Azure SQL live read needs a third-party driver.
+# The hybrid Blob read uses stdlib urllib and needs nothing here.
+hybrid = ["pymssql>=2.3"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
