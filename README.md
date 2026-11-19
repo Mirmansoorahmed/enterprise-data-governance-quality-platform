@@ -1,15 +1,20 @@
-# Enterprise Data Governance & Quality Platform
+# Enterprise Data Governance & Quality Platform: catalog, quality rules, ownership and GDPR as code
 
-A consulting case study, built as a runnable lab: a data-governance operating
-model — catalog, data-quality rules, ownership/stewardship, master data,
-lineage, GDPR (RoPA, retention, PII classification) and ODCS v3.2.0 data
-contracts — over synthetic multi-domain data. Open-source core; optional
-Azure-first adapters (Phase 9).
+**Problem:** A company's critical data sits in four domains and two country companies, with mismatched keys, a finance total that does not reconcile and unclassified personal data. Nobody can say who owns a field, which quality rules apply, or what an AI assistant may use.
+**What it does:** A runnable data-governance operating model: ODCS data contracts, a fail-closed data-quality gate (41 checks), catalog and EN/DE glossary, owner/steward RACI, GDPR RoPA, retention and PII classification, lineage, a steward fix-and-rerun loop, and `fit_for_ai` labels for AI tools. Open-source core, optional Azure adapters. Fictional client, synthetic data.
 
-Fictional consultancy **Northwind Advisory**, fictional client **Tarsfeld Group
-GmbH** (four domains: Customer, Product, Finance, HR). Synthetic data only. This
-repo *publishes* classification, ownership and `fit_for_ai` labels; it does not
-decide allow/ask/deny.
+**Run it in 3 steps** (Python 3.10+, standard library + pytest; no Docker, no cloud account):
+```bash
+python3 -m pip install pytest
+make test
+make demo
+```
+
+**What you'll see:** the demo walks six steps in under a second: 41 quality checks with 12 findings (dirty by design), a steward cleanse with a passing re-run, and AI access (HR list → deny, customer email export → deny, approved product KPI → allow). Committed KPIs: completeness 0.762, uniqueness 0.875, consistency 0.714. A live Azure run (SQL + Blob) gave the same gate results as the offline mock.
+
+**Read more:** [Design](docs/DESIGN.md) · [Rules & policies](docs/RULES-AND-POLICIES.md) · [Case study](docs/CASE-STUDY.md) · [Architecture explained](docs/diagrams/ARCHITECTURE-EXPLAINED.md) · [Azure hybrid run](docs/HYBRID.md) · [Results](eval/results/) · [Limitations](#limitations) · [How I built this](#how-i-built-this)
+
+---
 
 ## Problem
 
@@ -95,3 +100,16 @@ Collibra, Informatica, Purview and Fabric are buy-vs-build documentation, not
 implementations. The offline CI runs a standard-library quality engine as the
 documented unit equivalent of Great Expectations / dbt / the official ODCS
 schema validator (see [`design.md`](design.md) s10).
+
+## How I built this
+
+What I owned:
+- **The operating model:** which data elements are critical, who owns and stewards them (RACI), the EN/DE glossary, and the buy-versus-build view of commercial catalog and MDM tools.
+- **Rules and policies:** the `DQ-*` quality rules and what each failure does (quarantine, block, no export, `not_fit_for_ai`), and the GDPR policies (RoPA, retention, access, "HR data never goes to Azure").
+- **Test data:** synthetic extracts that are dirty on purpose, so every rule has something real to catch.
+- **Review and runs:** I checked that README numbers match the committed run file, and I did the Azure create-test-delete session (Germany West Central, free tiers, cost 0.00).
+
+### What didn't work, and what I changed
+1. **The SQL port was blocked.** The environment I tested from only allowed HTTP(S) outbound, so it could not reach Azure SQL on port 1433. The Blob read worked there (HTTPS + SAS). I ran the SQL read from Azure Cloud Shell instead, turned on "Allow Azure services" only for the test, and turned it off right after. *(docs/HYBRID.md "Lessons learned")*
+2. **The Query editor's Entra login failed.** It cannot sign in without an Entra admin set on the SQL server. I switched to SQL authentication in the classic login view. *(docs/HYBRID.md "Lessons learned")*
+3. **Azure CLI login was blocked by a Conditional Access policy.** So I wrote the runbook as portal-only: create, test and delete in one session, smallest tiers only. *(docs/HYBRID.md "Hard rules")*
